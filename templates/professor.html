@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.card {
+ 
+
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+  padding-bottom: 1rem;
+  background-image: linear-gradient(var(--card-gradient), white max(9.5rem, 27vh));
+  overflow: hidden;
+}
+.card img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: max(10rem, 30vh);
+  aspect-ratio: 4/3;
+  mix-blend-mode: var(--card-blend-mode);
+}
+.card img ~ * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.card > :last-child {
+  margin-bottom: 0;
+}
+.card:hover, .card:focus-within {
+  --card-gradient: #24a9d5 max(8.5rem, 20vh);
+}
+
+/* Additional demo display styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  color: #444;
+  background-color: #e1faf1;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.card a {
+  color: inherit;
+}
+
+.card-wrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  grid-gap: 1.5rem;
+  max-width: 100vw;
+  width: 120ch;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+</style>
+</head>
+<body>
+  <ul class="card-wrapper">
+    <li class="card">
+      <img src='https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=969&q=80' alt=''>
+      <h3><a href="">CSE</a></h3>
+      <p>Lorem ipsum sit dolor amit</p>
+    </li>
+    <li class="card">
+      <img src='https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt=''>
+      <h3><a href="">ECE</a></h3>
+      <p>Lorem ipsum sit dolor amit</p>
+    </li>
+    <li class="card">
+      <img src='https://images.unsplash.com/photo-1585166059782-f28143545183?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80' alt=''>
+      <h3><a href="">MECHANICAL</a></h3>
+      <p>Lorem ipsum sit dolor amit</p>
+    </li>
+    <li class="card">
+      <img src='https://images.unsplash.com/photo-1554475900-0a0350e3fc7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=359&q=80' alt=''>
+      <h3><a href="">CHEMICAL</a></h3>
+      <p>Lorem ipsum sit dolor amit</p>
+    </li>
+    <li class="card">
+      <img src='https://images.unsplash.com/photo-1457364847821-58861bbda116?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt=''>
+      <h3><a href="">AEROSPACE</a></h3>
+      <p>Lorem ipsum sit dolor amit</p>
+    </li>
+    <li class="card">
+      <img src='https://images.unsplash.com/photo-1581594549595-35f6edc7b762?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt=''>
+      <h3><a href="">BIOTECHNOLOGY</a></h3>
+      <p>Lorem ipsum sit dolor amit</p>
+    </li>
+  </ul>
+</body>
+</html> 
