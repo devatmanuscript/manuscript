@@ -18,10 +18,9 @@ cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 db= firestore.client()
 
-@app.route('/research.html')
+@app.route('/professor.html')
 def professor():
-    return render_template('research.html')
-
+    return render_template('professor.html')
 
 
 @app.route('/aboutus.html')
