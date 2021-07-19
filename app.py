@@ -22,6 +22,9 @@ db= firestore.client()
 def professor():
     return render_template('professor.html')
 
+@app.route('/conversion.html')
+def conversion():
+    return render_template('conversion.html')
 
 @app.route('/aboutus.html')
 def aboutus():
