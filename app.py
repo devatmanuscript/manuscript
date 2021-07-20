@@ -18,6 +18,8 @@ cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 db= firestore.client()
 
+
+
 @app.route('/professor.html')
 def professor():
     return render_template('professor.html')
@@ -35,6 +37,10 @@ def aboutus():
 def menubar():
     return render_template('menubar.html')
 
+    
+@app.route('/Csestatic.html')
+def csestatic():
+    return render_template('Csestatic.html')
 
 @app.route('/home.html')
 
