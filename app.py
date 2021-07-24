@@ -38,9 +38,9 @@ def menubar():
     return render_template('menubar.html')
 
     
-@app.route('/Csestatic.html')
+@app.route('/csestatic.html')
 def csestatic():
-    return render_template('Csestatic.html')
+    return render_template('csestatic.html')
 
 @app.route('/home.html')
 
