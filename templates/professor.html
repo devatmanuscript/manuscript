@@ -1,222 +1,274 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
 
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
 
-.sidebar a:hover {
-  color: #f1f1f1;
-}
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
 
-.openbtn:hover {
-  background-color: #444;
-}
+    .openbtn:hover {
+      background-color: #444;
+    }
 
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {
+        padding-top: 15px;
+      }
 
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
 
-html {
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+    h1 {
+      font-size: 2.5rem;
+      font-family: 'Montserrat';
+      font-weight: normal;
+      color: #444;
+      text-align: center;
+      margin: 2rem 0;
+    }
 
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
+    .wrapper {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 80rem;
+    }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
+    .cols {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
 
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
+    .col {
+      width: calc(25% - 2rem);
+      margin: 1rem;
+      cursor: pointer;
+    }
 
-.container {
-  padding: 0 16px;
-}
+    .container {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+    }
 
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+    .front,
+    .back {
+      background-size: cover;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      background-position: center;
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      text-align: center;
+      min-height: 280px;
+      height: auto;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.5rem;
+    }
 
-.title {
-  color: grey;
-}
+    .back {
+      background: #cedce7;
+      background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+      background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+      background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+    }
 
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
+    .front:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      opacity: .6;
+      background-color: #000;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 10px;
+    }
 
-.button:hover {
-  background-color: #555;
-}
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
+    .container:hover .front,
+    .container:hover .back {
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-.card {
- 
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
 
-  background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
-  padding-bottom: 1rem;
-  background-image: linear-gradient(var(--card-gradient), white max(9.5rem, 27vh));
-  overflow: hidden;
-}
-.card img {
-  border-radius: 0.5rem 0.5rem 0 0;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-height: max(10rem, 30vh);
-  aspect-ratio: 4/3;
-  mix-blend-mode: var(--card-blend-mode);
-}
-.card img ~ * {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.card > :last-child {
-  margin-bottom: 0;
-}
-.card:hover, .card:focus-within {
-  --card-gradient: #24a9d5 max(8.5rem, 20vh);
-}
+    .inner {
+      -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+      transform: translateY(-50%) translateZ(60px) scale(0.94);
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: 1px solid transparent;
+      -webkit-perspective: inherit;
+      perspective: inherit;
+      z-index: 2;
+    }
 
-/* Additional demo display styles */
-* {
-  box-sizing: border-box;
-}
+    .container .back {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
 
-body {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 1rem;
-  line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  color: #444;
-  background-color: #e1faf1;
-}
+    .container .front {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
 
-.card h3 {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-}
+    .container:hover .back {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
 
-.card a {
-  color: inherit;
-}
+    .container:hover .front {
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
 
-.card-wrapper {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-  grid-gap: 1.5rem;
-  max-width: 100vw;
-  width: 120ch;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+    .front .inner p {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
 
-</style>
+    .front .inner p:after {
+      content: '';
+      width: 4rem;
+      height: 2px;
+      position: absolute;
+      background: #C6D4DF;
+      display: block;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: -.75rem;
+    }
+
+    .front .inner span {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: 'Montserrat';
+      font-weight: 300;
+    }
+
+    @media screen and (max-width: 64rem) {
+      .col {
+        width: calc(33.333333% - 2rem);
+      }
+    }
+
+    @media screen and (max-width: 48rem) {
+      .col {
+        width: calc(50% - 2rem);
+      }
+    }
+
+    @media screen and (max-width: 32rem) {
+      .col {
+        width: 100%;
+        margin: 0 0 2rem 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="professor.html">Professor</a>
@@ -224,54 +276,159 @@ body {
     <a href="research.html">Research</a>
     <a href="aboutus.html">AboutUs</a>
   </div>
-  
-  <div id="main">
-    <button class="openbtn" onclick="openNav()">☰</button>  
-    <h2>Home Feed</h2>
-    <p>Welcome to Reseachers</p>
-  </div>
-  
-  <script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
-  </script>
-  <ul class="card-wrapper">
-    <li class="card">
-      <img src='https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=969&q=80' alt=''>
-      <h3><a href="Csestatic.html"><p style="text-align:center">CSE</p></a></h3>
-      
-    </li>
-    <li class="card">
-      <img src='https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt=''>
-      <h3><a href=""><p style="text-align:center">ECE</p></a></h3>
-      
-    <li class="card">
-      <img src='https://images.unsplash.com/photo-1585166059782-f28143545183?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80' alt=''>
-      <h3><a href=""><p style="text-align:center">MECHANICAL</p></a></h3>
-      
-    </li>
-    <li class="card">
-      <img src='https://images.unsplash.com/photo-1554475900-0a0350e3fc7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=359&q=80' alt=''>
-      <h3><a href=""><p style="text-align:center">CHEMICAL</a></p></h3>
-      
-    </li>
-    <li class="card">
-      <img src='https://images.unsplash.com/photo-1457364847821-58861bbda116?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt=''>
-      <h3><a href=""><p style="text-align:center">AEROSPACE</a></p></h3>
-      
-    </li>
-    <li class="card">
-      <img src='https://images.unsplash.com/photo-1581594549595-35f6edc7b762?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt=''>
-      <h3><a href=""><p style="text-align:center">BIOTECHNOLOGY</a></p></h3>
 
-    </li>
-  </ul>
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ </button>
+    <h2>Home</h2>
+
+  </div>
+
+  <div class="wrapper">
+    <h1>RESEARCH AREAS</h1>
+    <div class="cols">
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=669&q=80)">
+            <div class="inner">
+              <p>CSE</p>
+              <span>Computer Science</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1557855506-3619a44bab73?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80)">
+            <div class="inner">
+              <p>ECE</p>
+              <span>Electronics and Communication</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
+            <div class="inner">
+              <p>CHEMICAL</p>
+              <span>CHEMICAL </span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1457364847821-58861bbda116?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
+            <div class="inner">
+              <p>AEROSPACE</p>
+              <span>AEROSPACE</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1576086213369-97a306d36557?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80)">
+            <div class="inner">
+              <p>BIOTECH</p>
+              <span>BIOTECHNOLOGY</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1556894769-b9a5dab851c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
+            <div class="inner">
+              <p>CIVIL</p>
+              <span>CIVIL</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1600363503477-a8d1d6d57dfc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=708&q=80)">
+            <div class="inner">
+              <p>MINING</p>
+              <span>MINING</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="container">
+          <div class="front"
+            style="background-image: url(https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80)">
+            <div class="inner">
+              <p>METALLURGY</p>
+              <span>METALLURGY</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="inner">
+              <a href="https://home.iitd.ac.in/" target="blank">DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
+
 </body>
-</html> 
+
+</html>
