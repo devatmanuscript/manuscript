@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Hello Mf
+    </title>
+    <style>
+        /*	
+	Side Navigation Menu V2, RWD
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+        @charset "UTF-8";
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.42em;
+            color: #A7A1AE;
+            background-color: #1F2739;
+        }
+
+        button {
+            all: unset;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+        }
+
+        svg {
+            color: #fff;
+            fill: currentColor;
+            width: 24px;
+            height: 24px;
+            padding: 10px;
+        }
+
+        .search-box {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+        }
+
+        .input-search {
+            padding: 10px;
+            width: 80px;
+            height: 80px;
+            background: none;
+            border: 4px solid #ffd52d;
+            border-radius: 50px;
+            box-sizing: border-box;
+            font-family: Comic Sans MS;
+            font-size: 26px;
+            color: #ffd52d;
+            outline: none;
+            transition: .5s;
+        }
+
+        .input-search::placeholder {
+            color: rgba(255, 255, 255, .5);
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+
+        .btn-search {
+            width: 50px;
+            height: 50px;
+            border-style: none;
+            font-size: 20px;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            right: 0px;
+            color: #ffffff;
+            background-color: transparent;
+            pointer-events: painted;
+        }
+
+        .btn-search:focus~.input-search {
+            width: 300px;
+            border-radius: 0px;
+            background-color: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, .5);
+            transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+        }
+
+        .input-search:focus {
+            width: 300px;
+            border-radius: 0px;
+            /* this code is for animation */
+            background-color: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, .5);
+            transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 300;
+            line-height: 1em;
+            text-align: center;
+            color: #4DC3FA;
+        }
+
+        h2 {
+            font-size: 1em;
+            font-weight: 300;
+            text-align: center;
+            display: block;
+            line-height: 1em;
+            padding-bottom: 2em;
+            color: #FB667A;
+        }
+
+        h2 a {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #FB667A;
+            text-decoration: none;
+        }
+
+        .blue {
+            color: #185875;
+        }
+
+        .yellow {
+            color: #FFF842;
+        }
+
+        .container th h1 {
+            font-weight: bold;
+            text-align: center;
+
+            font-size: 1em;
+            text-align: left;
+            color: #185875;
+        }
+
+
+        .container td {
+            font-weight: normal;
+            border: 1px solid black;
+            width: 100px;
+
+            font-size: 1em;
+            -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+            -moz-box-shadow: 0 2px 2px -2px #0E1119;
+            box-shadow: 0 2px 2px -2px #0E1119;
+        }
+
+        .container {
+            text-align: center;
+            overflow: scroll;
+            width: 90%;
+            margin: 0 auto;
+            display: table;
+            padding: 0 0 8em 0;
+        }
+
+        .container td,
+        .container th {
+            padding-bottom: 2%;
+            padding-top: 2%;
+            /* padding-left:2%;   */
+        }
+
+        /* Background-color of the odd rows */
+        .container tr:nth-child(odd) {
+            background-color: #323C50;
+        }
+
+        /* Background-color of the even rows */
+        .container tr:nth-child(even) {
+            background-color: #2C3446;
+        }
+
+        .container th {
+            background-color: #1F2739;
+        }
+
+        .container td:first-child {
+            color: #FB667A;
+        }
+
+        .container tr:hover {
+            background-color: #464A52;
+            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+        }
+
+        .container td:hover {
+            background-color: #FFF842;
+            color: #403E10;
+            font-weight: bold;
+
+            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+            transform: translate3d(6px, -6px, 0);
+
+            transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+
+        @media (max-width: 800px) {
+
+            .container td:nth-child(4),
+            .container th:nth-child(4) {
+                display: none;
+            }
+        }
+
+
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        /*
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+*/
+    </style>
+</head>
+
+<body>
+    <h1><span class="blue"></span> <span class="yellow">Professor List (Alphabetical)</pan>
+    </h1>
+    <h2> Fields related to Computer Science and engineering</h2>
+    <div class="search-box">
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" id="myInput" class="input-search" onkeyup="myFunction()"
+  
+        placeholder=" Search By Professor Name" title="Type in a name"> 
+           
+        
+        <input type="text" id="myInput2" class="input-search" onkeyup="myFunction2()" placeholder="Search Interests"
+            title="Type in a name">
+    </div>
+
+
+
+    <table id="myTable" class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1 style="text-align:center">Name</h1>
+                </th>
+                <th>
+                    <h1 style="text-align:center">College</h1>
+                </th>
+                <th>
+                    <h1 style="text-align:center">Branch</h1>
+                </th>
+                <th>
+                    <h1 style="text-align:center">Interests</h1>
+                </th>
+                <th>
+                    <h1 style="text-align:center">Links</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Subrahmanyam Kalyanasundaram</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Theoretical Computer Science, Complexity Theory, Combinatorics and Graph Algorithms</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~subruk/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~subruk/publication/" target="_blank">Google Scholar</a>
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Antony Franklin</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Wireless Networks, Mobile Networks,5G Network and Systems, Low Latency transport protocol</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~antony/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~antony/publications.html" target="_blank">Google
+                                Scholar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Bheemarjuna Reddy Tamma</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Converged Radio Access Technologies,SDN/NFV for 5G,M2M/IoT,Mobile Social Networks in Proximity,Green
+                    ICT and Network Security</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~tbr/" target="_blank">Profile</a>
+                            <a href="https://scholar.google.com/citations?user=FYHCD2kAAAAJ&hl=en"
+                                target="_blank">Google Scholar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Fahad Panolan</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Parameterized Algorithms and Complexity, Approximation Algorithms, and Graph Theory</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://iith.ac.in/~fahad/" target="_blank">Profile</a>
+                            <a href="https://scholar.google.no/citations?user=X6MthEgAAAAJ&hl=en" target="_blank">Google
+                                Scholar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>j. saketha nath</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Machine Learning</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~saketha/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~saketha/research.html" target="_blank">Google Scholar</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Jyoti Vedurada</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Program Analysis, Program Understanding, Automated Concurrency Testing, and High-Performance
+                    Computing.</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://jyothivedurada.github.io/" target="_blank">Profile</a>
+                            <a href="https://jyothivedurada.github.io/#research" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Karteek Sreenivasaiah</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Theoretical Computer Science, Computational Complexity</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~karteek/" target="_blank">Profile</a>
+                            <a href="https://dblp.org/pid/16/9960.html" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Kotaro Kataoka</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Internet over Broadcast Media, Ipv6 Multicast, Post-Disaster Networking</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~kotaro/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~kotaro/publication/" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>M. V. Panduranga Rao</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Theoretical Computer Science</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~mvp/" target="_blank">Profile</a>
+                            <a href="#" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Manish Singh</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Databases, Data Mining, HCI, Information Retrieval, Information Visualization</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~msingh/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~msingh/research.html" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Manohar Kaul</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Applied Algebraic Topology, Topological Analysis Data, Machine Learning, and Spatial Databases</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://manukaul.github.io/" target="_blank">Profile</a>
+                            <a href="https://manukaul.github.io/publications/" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Maria Francis</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Computational Algebra, Symbolic Computation, Lattice Cryptography</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://sites.google.com/view/maria-francis/home" target="_blank">Profile</a>
+                            <a href="https://sites.google.com/view/maria-francis/home#h.kb7xfosqcbda"
+                                target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Maunendra Sankar Desarkar</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Recommender Systems, Information Retrieval, Machine Learning, Data Mining</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~maunendra/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~maunendra/research.html" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>N.R.Aravind</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Graph Theory, Combinatorics and Algorithms</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~aravind/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~aravind/research.html" target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Praveen</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Systems and Networking, Network Security, Software-Defined Networking, ML for Networks</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://praveenabt.github.io/" target="_blank">Profile</a>
+                            <a href="https://scholar.google.com/citations?user=ZCukcP4AAAAJ&hl=en"
+                                target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Ramakrishna Upadrasta (U.Ramakrishna)</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Programming Languages, Compiler Optimizations, Parallelizing Compilers, Program Optimizations,
+                    Static Analysis, Verification, Algorithms, Combinatorial Optimization, Theory of Algorithms</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~rakeshvenkat/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~rakeshvenkat/#AcademicsResearch" target="_blank">Google
+                                Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Rogers Mathew</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Combinatorics, Graph Theory, and Graph Algorithms.</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://iith.ac.in/~rogers/" target="_blank">Profile</a>
+                            <a href="https://scholar.google.ca/citations?hl=en&user=-euQnQYAAAAJ&view_op=list_works&sortby=pubdate"
+                                target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Sathya Peri</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Parallel Programming, Software Transactional Memory, Distributed Systems, Theory of Databases,
+                    Algorithm Analysis, Networking Algorithms</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~sathya_p/" target="_blank">Profile</a>
+                            <a href="http://www.iith.ac.in/~sathya_p/index_files/Publications.html"
+                                target="_blank">Google Scholar</a>
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Saurabh Joshi</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Program Analysis, Formal Methods, Verification, Concurrency, Constraint Solving</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://sbjoshi.github.io/" target="_blank">Profile</a>
+                            <a href="https://scholar.google.com/citations?user=MvHEGbYAAAAJ" target="_blank">Google
+                                Scholar</a>
+
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Sobhan Babu</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Big Data Analytics, Graph Theory and Applied Algorithms</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~sobhan/" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~sobhan/" target="_blank">Google Scholar</a>
+
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>P. K. Srijith</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Bayesian Data Analysis, Probabilistic Machine Learning, Bayesian Non-Parametrics, Survival Analysis
+                    and Text Analytics</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://sites.google.com/site/pksrijith/home" target="_blank">Profile</a>
+                            <a href="https://sites.google.com/site/pksrijith/publications" target="_blank">Google
+                                Scholar</a>
+
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Vineeth N Balasubramanian</td>
+                <td>IIT HYDERABAD</td>
+                <td>CSE</td>
+                <td>Machine Learning</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="dropbtn">Details</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.iith.ac.in/~vineethnb/index.html" target="_blank">Profile</a>
+                            <a href="https://www.iith.ac.in/~vineethnb/pubs.html" target="_blank">Google Scholar</a>
+
+                            <p></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        function myFunction2() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput2");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[3];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
