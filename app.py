@@ -35,7 +35,7 @@ def aboutus():
     
 @app.route('/')
 def menubar():
-    return render_template('menubar.html')
+    return render_template('home.html')
 
     
 @app.route('/csestatic.html')
