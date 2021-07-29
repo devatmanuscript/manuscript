@@ -41,7 +41,7 @@ def menubar():
 @app.route('/csestatic.html')
 def csestatic():
     return render_template('csestatic.html')
-
+#hehe
 @app.route('/home.html')
 
 def homepage():
