@@ -64,7 +64,9 @@
   .sidebar a {font-size: 18px;}
 }
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+#more {display: none;}
 </style>
+
 <body class="w3-light-grey">
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -125,7 +127,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         
         S. Keshav describes three-pass reading in detail: What are you trying to do on each pass?
         
-        <h4>Write as you read</h4>
+        <h4>Write as you read</h4><span id="dots">...</span><span id="more">
         Write as you read. This keeps your attention focused and makes you engage with the paper.
         
         <h5>Low-level notes</h5>
@@ -242,11 +244,31 @@ and is wrapped around the whole page content, except for the footer in this exam
   <li>early papers that are heavily cited</li>
 <li>sometimes Wikipedia</li>
       </ul>
-      </ul></p>
+      </ul></span></p>
+      <button onclick="myFunction()" id="myBtn">Read more</button>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
       <div class="w3-row">
-        <div class="w3-col m8 s12">
+        <!-- <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
+        </div> -->
         <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
         </div>
