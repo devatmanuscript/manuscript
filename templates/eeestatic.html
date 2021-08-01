@@ -1,0 +1,3596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Hello Mf
+    </title>
+    <style>
+        /*	
+	Side Navigation Menu V2, RWD
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+}
+
+.search-box{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search{
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: #22a6b3;
+  padding-right: 40px;
+  color:#fff;
+}
+.input-search::placeholder{
+  color:rgba(255,255,255,.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search{
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:transparent;
+  pointer-events: painted;  
+}
+.btn-search:focus ~ .input-search{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:focus{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+	  font-weight: bold;
+	  text-align: center;
+	  
+	  font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+
+.container td {
+	  font-weight: normal;
+	  border: 1px solid black;
+      width: 100px;
+	 
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: center;
+	  overflow: scroll;
+	  width: 90%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  /* padding-left:2%;   */
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: #2C3446;
+}
+
+.container th {
+	  background-color: #1F2739;
+}
+
+.container td:first-child { color: #FB667A; }
+
+.container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/*
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+*/
+
+    </style>
+</head>
+<body>
+    <h1><span class="blue"></span> <span class="yellow">Professor List (Alphabetical)</pan></h1>
+        <h2> Fields related to Computer Science and engineering</h2>
+        <div class="search-box">
+          <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" id="myInput" class="input-search" onkeyup="myFunction()" placeholder="Search By Professor Name" title="Type in Professor Name">
+        <input type="text" id="myInput2" class="input-search" onkeyup="myFunction2()" placeholder="Search Interests" title="Type Interests ">
+        <input type="text" id="myInput3" class="input-search" onkeyup="myFunction3()" placeholder="Search by College Name" title="Type College Name ">
+      </div>
+
+
+        
+        <table id="myTable"class="container">
+            <thead>
+                <tr>
+                    <th><h1 style="text-align:center">Name</h1></th>
+                    <th><h1 style="text-align:center">College</h1></th>
+                    <th><h1 style="text-align:center">Branch</h1></th>
+                    <th><h1 style="text-align:center">Interests</h1></th>
+					<th><h1 style="text-align:center">Links</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+
+<tr><td>Vivek Shripad Borkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Stochastic Optimization and Control Learning Control Theory Random Processes</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/borkar" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/borkar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Subhananda Chakrabarti</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>III-V Compound semiconductor materials growth and characterization Optoelectronic Devices of interest includes quantum dot photodetectors and Solar cells III-V device integration on germanium</td>       
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~subho" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~subho" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Debraj Chakraborty</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Optimal Control Linear Systems Optimization Differential Games Game Theory</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/dc" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/dc" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Mukul C. Chandorkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~mukul/mcc1.html" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~mukul/mcc1.html" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prasanna Chaporkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Resource Allocation and scheduling in wired/wireless networks Optimization and control of stochastic systems Distributed systems and algorithms</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/chaporkar" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/chaporkar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Subhasis Chaudhuri</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Multimedia, Computer Vision, Image Processing, Pattern Recognition, Biomedical Signal Processing, Computational Haptics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~sc/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~sc/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Madhav P. Desai</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>VLSI Circuits and Systems VLSI design and design automation Graph theory and combinatorics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~madhav/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~madhav/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Bikash Kumar Dey</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Information Theory Coding Theory Wireless communication</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/bikash" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/bikash" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Siddhartha P Duttagupta</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Tera Hertz Spectroscopy Wireless RF Power Transfer (highly directive reflect-array antenna) Silicon Photo Multiplier (avalanche photo-diode array based single photon detector) Photo Electro Chemical Power Converter (ultra-low light intensity operation) High Performance Computing (real-time, non-uniform, photo-intensity mapping) Mobile Green Hybrid Power Platforms (air-borne, off-shore, sub-surface monitoring)</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="Errorpage.html" target="_blank">Profile</a>
+
+
+<a href="Errorpage.html" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Vikram M. Gadre</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Communication and signal processing, with emphasis on multiresolution and multirate signal processing, especially wavelets and filter banks: theory and applications</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/vmgadre" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/vmgadre" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Swaroop Ganguly</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Quantum biomimetics: electronic devices inspired by quantum biology Heterostructure transistors for next-generation logic, high-speed and high-power applications</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/sganguly" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/sganguly" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Udayan Ganguly</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Memories - Resistance RAM, Charge Trap / Nanocrystal Flash Memory, Ferroelectric RAM Logic - Transistor variability, SOI-MOSFETs Architecture: Neuromorphic Algorithms and Circuit Implementations.</td>   
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~udayanresearch" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~udayanresearch" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Manoj Gopalkrishnan</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Algorithms in nature Information processing in networks Reaction networks Neural networks Evolution Game theory Deep learning Information geometry Thermodynamics of information Quantum Information</td>  
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.tcs.tifr.res.in/~manoj" target="_blank">Profile</a>
+
+
+<a href="http://www.tcs.tifr.res.in/~manoj" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shalabh Gupta</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>High-speed CMOS analog/RF/mm-wave integrated circuits and systems Optical fiber communication systems Microwave photonics / ultrafast data conversion using photonics Beamforming antenna systems Signal processing for these systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/shalabh" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/shalabh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Joseph John</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Analog and Digital Circuits Optical Fiber Communications Indoor Optical Wireless Systems Modern Electronic Systems and Instrumentation</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/jjohn" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/jjohn" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>K.L.Narasimhan</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Organic semiconductors:Physics and devices, Disordered semiconductors, Photovoltaics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="Errorpage.html" target="_blank">Profile</a>
+
+
+<a href="Errorpage.html" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Nikhil Karamchandani</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Information Theory Networks Communications Distributed Computation Cyber-Physical Systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.ee.iitb.ac.in/~nikhilk" target="_blank">Profile</a>
+
+
+<a href="https://www.ee.iitb.ac.in/~nikhilk" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Abhay Karandikar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Quality of Service and Resource Allocation in Wired/Wireless Networks TV White Space and its Potential for Affordable Broadband Access in India Frugal 5G and Rural Broadband Resource Allocation, Mobility Management and Dual Connectivity in Heterogeneous Wireless Network Device to Device Communication Software Defined Networking</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~karandi/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~karandi/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Gaurav S Kasbekar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Modeling, design and analysis of wireless networks</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~gskasbekar" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~gskasbekar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shrikrishna A. Khaparde</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Deregulation in Power Industry: optimal bidding, and congestion management, Object Oriented Power System Analysis, Controlled series compensation using SSSC, Harmonic Distortion in Distribution systems, 
+Design and Operation of small tidal power plant, Modelling and Design of transformer</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/sak" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/sak" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Animesh Kumar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Signal processing Data-science Statistical machine learning Applied statistics Wireless</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~animesh" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~animesh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anil Kottantharayil</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>CMOS device physics, design and modelling Materials for advanced CMOS devices CMOS device physics, design and modelling Materials for advanced CMOS devices Electrical characterization Gate oxide reliability and hot-carrier effects Radiation effects on MOS devices</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/anilkg" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/anilkg" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anupama Kowli</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Power system planning, operations and control Electricity markets and economics of electric power grids Policy and regulation for electric power grids Grid integration of renewable generation and distributed storage Demand-side management, demand response and flexible loads Smart grids and its enabling technologies and mechanisms</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~anu" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~anu" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anil Kulkarni</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Power System Dynamics and Control Application of Power Electronics to Power Systems Flexible AC Transmission Systems HVDC Transmission Systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/anil" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/anil" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shrikrishna V. Kulkarni</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Transformers: Design, Analysis and Diagnostics Electromagnetic and Coupled Field Computations Power Engineering: Distributed Generation High Voltage Engineering: Insulation Design/Diagnostics</td>       
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/svk" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/svk" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Girish Kumar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Microstrip antennas and arrays, Broadband antennas Microwave integrated circuits EMI/ EMC RF communication circuits</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/gkumar" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/gkumar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Apurba Laha</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>III-Nitride semiconductors and heterostructures: Growth using Molecular Beam Epitaxy III-Nitride Nanowires: Growth and Devices Optoelectronics devices such as Green Laser Diode, UV LED Oxide based electronics: Epitaxial rare earth oxides (high-K dielectrics) on III-Nitride substrates for MOSHEMT application. Physics of nanostructure growth Solid phase epitaxy of semiconductor and oxide materials, Encapsulated solid phase epitaxy, Molecular Beam epitaxy, Mismatch epitaxy</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/laha" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/laha" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Saurabh Lodha</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>CMOS process integration and device physics Materials and processes for advanced CMOS devices Metal-semiconductor interfaces 2D materials and devices Molecular devices</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~slodha" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~slodha" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Souvik Mahapatra</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Electrical characterization, modeling and simulation of micro/nano electronic devices NBTI/PBTI and Hot carrier degradation in MOSFETs High-k gate dielectrics Advanced CMOS device reliability Flash EEPROMs - Floating gate, SONOS/SANOS & Metal Nanopartic</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/souvik" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/souvik" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>D. Manjunath</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Computer and Communication Network Protocols Systems and Algorithms Performance Modeling Queueing Theory and Simulation Stochastic Systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/dmanju" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/dmanju" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shabbir Merchant</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Signal Processing & Adaptive Signal Processing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/merchant" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/merchant" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sharayu Moharir</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Content delivery networks Communication networks Crowdsourcing Stochastic modeling Resource allocation Algorithm design and performance analysis</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://sites.google.com/site/sharayumoharir/" target="_blank">Profile</a>
+
+
+<a href="https://sites.google.com/site/sharayumoharir/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dwaipayan Mukherjee</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Multi-agent Systems Consensus Formation Control Control Theory Robust Control</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="Errorpage.html" target="_blank">Profile</a>
+
+
+<a href="Errorpage.html" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Jayanta Mukherjee</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>RF VLSI Design Antenna Design Biomedical IC Design Testing and Characterization Analog VLSI Digital VLSI Noise Modeling</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/jayanta" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/jayanta" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pramod Murali</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="Errorpage.html" target="_blank">Profile</a>
+
+
+<a href="Errorpage.html" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Bhaskaran Muralidharan</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Computational nanolectronics Spintronics Nano scale energy conversion.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/bmwebpage/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/bmwebpage/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Jayakrishnan U Nair</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Queueing theory Communication networks Heavy tails</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.ee.iitb.ac.in/~jayakrishnan.nair/" target="_blank">Profile</a>
+
+
+<a href="https://www.ee.iitb.ac.in/~jayakrishnan.nair/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pradeep R. Nair</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Nanoscale devices for energy and healthcare applications. Semiconductor device physics and reliability. Microelectromechanical systems (MEMS)</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/prnair" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/prnair" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Harihar Narayanan</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Building large scale circuit simulators Combinatorial optimization including submodular function theory Large scale system partitioning</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~hn/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~hn/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Debasattam Pal</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Distributed parameter systems Algebraic analysis Optimal control Dissipative systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.ee.iitb.ac.in/~debasattam" target="_blank">Profile</a>
+
+
+<a href="https://www.ee.iitb.ac.in/~debasattam" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prem C. Pandey</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Speech & Signal Processing Biomedical Signal Processing & Instrumentation Electronic Instrumentation Embedded Electronic System Design</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~pcpandey/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~pcpandey/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Mahesh B. Patil</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Circuit simulation Semiconductor device modelling and simulation Real-time simulation of power electronic circuits and systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.ee.iitb.ac.in/wiki/faculty/mbpatil" target="_blank">Profile</a>
+
+
+<a href="https://www.ee.iitb.ac.in/wiki/faculty/mbpatil" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sachin Patkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Combinatorial optimization Matroid Theory Submodular Functions Linear/Integer programming Network Flows High Performance Computing FPGA-based accelerated computing GPU based acceleration High Performance Circuit Simulation Algorithms Design and Analysis</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/patkar" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/patkar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Harish K. Pillai</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Control theory Systems theory Multidimensional systems Numerical and computational methods Coding theory Optimization techniques Electromagnetics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/hp" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/hp" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sibi Raj B Pillai</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Fundamental Limits of Communication Systems Information Theory and its applications Compressed Sensing Stochastic Modeling Resource Allocation Problems Interference Channels Relaying and Broadcasting</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~bsraj/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~bsraj/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Preeti Rao</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Speech and Audio Signal Processing Music Information Retrieval</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.ee.iitb.ac.in/course/~daplab/" target="_blank">Profile</a>
+
+
+<a href="https://www.ee.iitb.ac.in/course/~daplab/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dipankar Saha</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Microelectronics New Device Physics Semiconductor Spintronics Spin injection, transport and detection in III-V systems Device Reliability</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/dsaha" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/dsaha" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Kasturi Saha</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Nanophotonics Quantum optics Magnetometry Color centers in diamond</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~kasturis/index.php" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~kasturis/index.php" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Amit Sethi</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Computational pathology Medical image analysis Deep learning Machine learning Computer vision Image processing Signal processing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~asethi" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~asethi" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>D. K. Sharma</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>MOS device modeling VLSI design and technology. Microelectronics - technology and device characterisation mixed signal design</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/dinesh" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/dinesh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>R. K. Shevgaonkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Fibre Optic Communication Photonics Non-linear fibre optics Antennas Image Processing Radio Astronomy</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/rks" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/rks" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Narendra S Shiradkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Photovoltaic Module and System Reliability Accelerated Testing and Lifetime Prediction Physics of Failure and Electronic Device Failure Analysis Techniques Photovoltaic Performance Modeling Photovoltaic 
+Power Plant Inspection and Monitoring Techniques In-line Metrology and Characterization Techniques for Photovoltaic Module Manufacturing PV Module Deployments and Manufacturing in India</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="Errorpage.html" target="_blank">Profile</a>
+
+
+<a href="Errorpage.html" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anshuman Shukla</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Multilevel converters and Modulation and control of power electronic converters Power electronics applications in power systems (FACTS, HVDC, custom power devices, etc.) Renewable energies and Energy storage Control of electric drives Hybrid and solid-state circuit breakers and current limiters</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/ashukla" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/ashukla" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Virendra Singh</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Computer Architecture Processor architecture & micro-architecture VLSI Testing Fault-tolerant computing Robust design and architectures Self-healing system design SoC/NoC design and test Post Silicon Debug High level synthesis Formal verification</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~viren/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~viren/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shreevardhan A. Soman</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Power system analysis, computation and economics, Power system protection</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.ee.iitb.ac.in/wiki/faculty/soman" target="_blank">Profile</a>
+
+
+<a href="https://www.ee.iitb.ac.in/wiki/faculty/soman" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Virendra R. Sule</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Cryptology: Block and stream ciphers, efficient arithmetic for public key cryptography, algebraic cryptanalysis Dynamical systems and feedback control theory: Boolean dynamical systems, design of feedback compensation for high bandwidth analogue systems, Stabilization theory. Extension of feedback theory for linear active network synthesis Computation: Algorithms for parallel computation, solutions of Boolean equations and applications</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/vrs" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/vrs" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Siddharth Tallur</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Embedded Systems and Sensors Digital Systems and Signal Processing Photonics and Frequency Control Microsystems and MEMS Ongoing projects: Electrochemical sensors for DNA and protein sensing, AMR, water 
+quality monitoring, Acoustic and electromagnetic techniques for corrosion monitoring, Ultrasonic guided wave structural health monitoring, Vibration sensor systems for machine health monitoring</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~stallur/index.php/" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~stallur/index.php/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ashwin A. Tulapurkar</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Spintronics Physics of nano-devices Spin-current induced magnetization switching RF properties of spintronic devices Noise Thermoelectric effects</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/ashwin" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/ashwin" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Juzer M. Vasi</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Reliability of solar modules Deployment of solar PV in India Global deployment of solar PV Nanocrystal based solar cells Nanoelectronics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/wiki/faculty/vasi" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/wiki/faculty/vasi" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rajbabu Velmurugan</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Statistical and digital signal processing Audio and speech processing Image processing and computer vision Signal processing system design</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/web/faculty/homepage/rajbabu" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/web/faculty/homepage/rajbabu" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Saravanan Vijayakumaran</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>Signal Processing for Communications Parallel Simulation Algorithms</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~sarva" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~sarva" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rajesh H. Zele</td>
+
+
+<td>IIT Bombay</td>
+
+
+<td>EE</td>
+
+
+<td>RF, Analog & Mixed-Signal Circuits for Communication Applications</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.ee.iitb.ac.in/~zelerajesh/index.php" target="_blank">Profile</a>
+
+
+<a href="http://www.ee.iitb.ac.in/~zelerajesh/index.php" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Anoop Thomas</td>
+
+
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Coding techniques; Algebraic Error Correcting Codes; Index Coding; Network Coding; Coded caching; ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/anoopthomas/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/anoopthomas/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Barathram. Ramkumar</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Signal Processing; Wireless Communication; IoT; Bio Signal Processing</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/barathram/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/barathram/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Chandrasekhar Perumalla</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Integration and Control of Renewable Energy Systems; Design and Development of Smart Controllers ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pcsekhar/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/pcsekhar/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Chandrashekhar Narayan Bhende</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Power Quality, Renewable Energy Sources, Distributed Generation, Custom Power Devices and Application ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/cnb/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/cnb/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Debalina Ghosh</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Remote sensing (Healthcare and Infrastructure monitoring)
+      Electromagnetic Engineering</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/deghosh/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/deghosh/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Debapratim Ghosh</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>High performance active and passive microwave couplers, broadband power dividers, multi-port ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/debapratim/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/debapratim/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Debi Prosad Dogra</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Visual Surveillance; Intelligent Transportation Systems; Augmented Reality; Human Computer ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/dpdogra/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/dpdogra/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Dipankar De</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Switched Mode Power Converters and Design of Integrated Magnetics;
+     Application of Power Electronics ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/dipankar/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/dipankar/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Joy Chandra Mukherjee</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Distributed Algorithms; Scheduling and Optimization; Intelligent Transportation Systems; Smart ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/joy/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/joy/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. M. Sabarimalai Manikandan</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Areas of Research: Electronic System Design; Signal and Image Processing; Machine Learning ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/msm/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/msm/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Manoranjan Satpathy</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Software Testing & Verification, Software Engineering, Formal Methods</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/manoranjan/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/manoranjan/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Prof. N. C. Sahoo</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Power System Optimization and Control, Power Electronics and Control of Electric Drives, Renewable ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/ncsahoo/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/ncsahoo/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Nijwm Wary</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Analog CMOS VLSI circuit design; circuit design for high speed serial link; SERDES; on-chip ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/nijwm-wary/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/nijwm-wary/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Niladri Bihari Puhan</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Image and Video Processing; Signal Processing, Computer Vision; Machine Learning & Deep Learning; Medical ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/nbpuhan/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/nbpuhan/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Olive Ray</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Power Electronic Converters; Digital control of Power Electronics; Storage integration in Power ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/oliveray/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/oliveray/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Padmalochan Bera</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Network Security; Cryptography; Access Control; Software Defined Networks; Intrusion Detection ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/padmalochanbera/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/padmalochanbera/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Pasupureddi Vijaya Sankara Rao</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Analog, RF and Mixed-Signal VLSI Integrated Circuits and Systems; IC Design for Wireless and ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pvsr/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/pvsr/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Prasant Kumar Sahu</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Advanced Modulation Formats and Signal Processing Schemes, Communication System Design and ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pks/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/pks/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Pravas Ranjan Sahu</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Digital Communications; Mobile Communications; Receiver performance in fading channels; Visible ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/prs/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/prs/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Prof. R. V. Rajakumar</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Voice and multimedia over IP
+      VLSI based processors for wireless communication systems
+      ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/R.V.Rajakumar/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/R.V.Rajakumar/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Sankarsan Mohapatro</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>High Voltage Engineering; Industrial Application of High Voltage for Air Pollution Control; ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sankarsan/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/sankarsan/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Siddhartha S. Borkotoky</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Wireless Communications; IoT; Application-Layer Coding; Adaptive Transmission Protocols ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/siddhartha-suraj/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/siddhartha-suraj/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Soumya Prakash Dash</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Communication theory ; Hybrid communication systems ; Powerline communications ; Smart grid ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/soumyapd/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/soumyapd/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Srinivas Bhaskar Karanki</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Power quality, Energy storage, DC-DC Converters for renewable energy sources, and power electronics ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/skaranki/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/skaranki/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Srinivas Boppu</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>High Level Synthesis, Programmable Hardware Accelerators, Coarse-Grained Reconfigurable Architectures, ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sboppu/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/sboppu/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Srinivas Pinisetty</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>â€¢ Formal modeling, verification;
+    
+     â€¢ Runtime monitoring (verification, enforcemet)</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/srinivaspinisetty/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/srinivaspinisetty/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Subhajyoti Mukherjee</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Power Converter Modeling and Control, Wide Band-gap Devices based Power Converters, Soft switching ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/subhajyoti-mukherjee/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/subhajyoti-mukherjee/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Subhransu Ranjan Samantaray</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Power System Protection, Smart-Grid, PMU and WAMs</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sbh_samant/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/sbh_samant/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Dr. Sudipta Saha</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>Wireless Sensor Networks; Internet-of-Things (IoT); Multi-Robot Systems; Secure Communication; ...</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sudipta/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/sudipta/" target="_blank">Publications</a><p></p></div></td></tr>
+    <tr><td>Prof. Rabi N. Mahapatra</td>
+    
+    
+    <td>IIT BHUBNESWAR</td>
+    
+    
+    <td>EE</td>
+    
+    
+    <td>NA</td>
+    
+    
+    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/rabi-mahapatra/" target="_blank">Profile</a>
+    
+    
+    <a href="http://www.iitbbs.ac.in/profile.php/rabi-mahapatra/" target="_blank">Publications</a><p></p></div></td></tr>
+
+    <tr><td>Dr. Anoop Thomas</td>
+
+
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Coding techniques; Algebraic Error Correcting Codes; Index Coding; Network Coding; Coded caching; ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/anoopthomas/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/anoopthomas/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Barathram. Ramkumar</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Signal Processing; Wireless Communication; IoT; Bio Signal Processing</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/barathram/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/barathram/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Chandrasekhar Perumalla</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Integration and Control of Renewable Energy Systems; Design and Development of Smart Controllers ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pcsekhar/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/pcsekhar/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Chandrashekhar Narayan Bhende</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Power Quality, Renewable Energy Sources, Distributed Generation, Custom Power Devices and Application ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/cnb/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/cnb/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Debalina Ghosh</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Remote sensing (Healthcare and Infrastructure monitoring)
+          Electromagnetic Engineering</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/deghosh/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/deghosh/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Debapratim Ghosh</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>High performance active and passive microwave couplers, broadband power dividers, multi-port ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/debapratim/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/debapratim/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Debi Prosad Dogra</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Visual Surveillance; Intelligent Transportation Systems; Augmented Reality; Human Computer ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/dpdogra/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/dpdogra/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Dipankar De</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Switched Mode Power Converters and Design of Integrated Magnetics;
+         Application of Power Electronics ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/dipankar/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/dipankar/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Joy Chandra Mukherjee</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Distributed Algorithms; Scheduling and Optimization; Intelligent Transportation Systems; Smart ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/joy/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/joy/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. M. Sabarimalai Manikandan</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Areas of Research: Electronic System Design; Signal and Image Processing; Machine Learning ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/msm/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/msm/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Manoranjan Satpathy</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Software Testing & Verification, Software Engineering, Formal Methods</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/manoranjan/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/manoranjan/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Prof. N. C. Sahoo</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Power System Optimization and Control, Power Electronics and Control of Electric Drives, Renewable ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/ncsahoo/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/ncsahoo/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Nijwm Wary</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Analog CMOS VLSI circuit design; circuit design for high speed serial link; SERDES; on-chip ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/nijwm-wary/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/nijwm-wary/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Niladri Bihari Puhan</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Image and Video Processing; Signal Processing, Computer Vision; Machine Learning & Deep Learning; Medical ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/nbpuhan/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/nbpuhan/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Olive Ray</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Power Electronic Converters; Digital control of Power Electronics; Storage integration in Power ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/oliveray/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/oliveray/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Padmalochan Bera</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Network Security; Cryptography; Access Control; Software Defined Networks; Intrusion Detection ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/padmalochanbera/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/padmalochanbera/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Pasupureddi Vijaya Sankara Rao</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Analog, RF and Mixed-Signal VLSI Integrated Circuits and Systems; IC Design for Wireless and ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pvsr/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/pvsr/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Prasant Kumar Sahu</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Advanced Modulation Formats and Signal Processing Schemes, Communication System Design and ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pks/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/pks/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Pravas Ranjan Sahu</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Digital Communications; Mobile Communications; Receiver performance in fading channels; Visible ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/prs/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/prs/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Prof. R. V. Rajakumar</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Voice and multimedia over IP
+          VLSI based processors for wireless communication systems
+          ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/R.V.Rajakumar/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/R.V.Rajakumar/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Sankarsan Mohapatro</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>High Voltage Engineering; Industrial Application of High Voltage for Air Pollution Control; ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sankarsan/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/sankarsan/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Siddhartha S. Borkotoky</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Wireless Communications; IoT; Application-Layer Coding; Adaptive Transmission Protocols ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/siddhartha-suraj/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/siddhartha-suraj/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Soumya Prakash Dash</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Communication theory ; Hybrid communication systems ; Powerline communications ; Smart grid ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/soumyapd/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/soumyapd/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Srinivas Bhaskar Karanki</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Power quality, Energy storage, DC-DC Converters for renewable energy sources, and power electronics ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/skaranki/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/skaranki/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Srinivas Boppu</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>High Level Synthesis, Programmable Hardware Accelerators, Coarse-Grained Reconfigurable Architectures, ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sboppu/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/sboppu/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Srinivas Pinisetty</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>â€¢ Formal modeling, verification;
+        
+         â€¢ Runtime monitoring (verification, enforcemet)</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/srinivaspinisetty/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/srinivaspinisetty/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Subhajyoti Mukherjee</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Power Converter Modeling and Control, Wide Band-gap Devices based Power Converters, Soft switching ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/subhajyoti-mukherjee/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/subhajyoti-mukherjee/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Subhransu Ranjan Samantaray</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Power System Protection, Smart-Grid, PMU and WAMs</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sbh_samant/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/sbh_samant/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Dr. Sudipta Saha</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>Wireless Sensor Networks; Internet-of-Things (IoT); Multi-Robot Systems; Secure Communication; ...</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sudipta/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/sudipta/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Prof. Rabi N. Mahapatra</td>
+        
+        
+        <td>IIT BHUBNESWAR</td>
+        
+        
+        <td>EE</td>
+        
+        
+        <td>www.techcrunch.com</td>
+        
+        
+        <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/rabi-mahapatra/" target="_blank">Profile</a>
+        
+        
+        <a href="http://www.iitbbs.ac.in/profile.php/rabi-mahapatra/" target="_blank">Publications</a><p></p></div></td></tr>
+        <tr><td>Ajay Agarwal</td>
+
+
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Microelectronics; Micro- Nano-technologies; Sensors; Micro-fluidics, Point-of-Care devices and Early diagnostics</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~ajayagarwal" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~ajayagarwal" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Aashish Mathur</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Power Line Communications, Free Space Optical Communications, Visible Light Communications</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~aashishmathur" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~aashishmathur/publication.html" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Abdul Gafoor Shaik</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Protection of various components of Power System, Protection of Distribution Network with DG penetration, Power Quality assessment and mitigation in Distribution Networks with Renewable Energy Source penetration</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~saadgafoor" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~saadgafoor/publication.html" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Amandeep Kaur</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Analog and Mixed-Signal Circuit Design, Data Converters (ADC, DAC), High-speed circuits, CMOS image sensors</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~amandeepkaur" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~amandeepkaur/" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Amit Bhardwaj</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Human Haptics, Computer Haptics, Haptics for Teleoperation and Applications of Machine Learning</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~amitb" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~amitb/publication.html" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Anil Kumar Tiwari</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Electrical Engineering: Image Processing, Video Processing, and Signal Processing application in Bio-Medical</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~akt" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~akt/#publications" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Anoop Jain</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Cooperative Control; Multi-Agent Systems; Formation Control; Nonlinear Control; Event-Triggered Control, Cyber-Physical Systems</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~anoopj" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~anoopj" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Arani Ali Khan</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>RF and Microwave Engineering.</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~aakhan" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~aakhan" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Arpit Khandelwal</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Group III-V Optoelectronic Devices, Fiber Optics and Integrated Optics Sensors, Non-Linear Photonics, Silicon Photonics and Optical Communication</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~arpitkhandelwal" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~arpitkhandelwal" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Binod Kumar</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>SoC Design Verification & Testing, Hardware Security & Trust, Hardware Design for AI, VLSI CAD, Computer Architecture</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~binod" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~binod" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Deepakkumar M. Fulwani</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Embedded Control, Control of Micro-Grids and Control of Uncertain System</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~df" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~df" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Harshit Agarwal</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Industry standard compact modeling; Analog and RF modeling, Energy efficient next generation transistors, emerging memories</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~agarwalh" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~agarwalh" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Himanshu Kumar</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Image and Video Processing, Computer Vision, Computational Imaging, Deep Learning</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~hkumar" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~hkumar" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Jai Narayan Tripathi</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>VLSI Circuits and Systems, Signal Integrity, Power Integrity, Design of Experiments, Metaheuristic Optimization Techniques</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~jai" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~jai" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Kamaljit Rangra</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>MEMS, Transducers and Actuators</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~kjrangra" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~kjrangra" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Mahesh Kumar</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Group III-V quantum structures by MBE, Growth of thin films and nanostructures, Group III-nitride alloys for LEDs, HEMTs and photovoltaic applications, Inorganic-Inorganic hybrid structures with special 
+            attention to band gap engineering, Si and wide band gap semiconductors for MEMS, Micro and Nano device fabrications</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~mkumar" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~mkumar" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Manish Narwaria</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Multimedia signal processing</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~narwaria" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~narwaria" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Niladri Sekhar Tripathy</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Dynamics and Control, Mechatronics and Cyber Physical Systems</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~niladri" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~niladri" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Nitin Bhatia</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Fiber Optics and Photonics</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~nitin" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~nitin" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Rajendra Nagar</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Computer Vision; Image Processing; Computer Graphics; 3D Shape Analysis; Geometry Processing</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~rn" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~rn" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Rajlaxmi Chouhan</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Image processing, image quality assessment, noise-aided image enhancement, e-learning tools and techniques</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~rajlaxmichouhan" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~rajlaxmichouhan" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Ravi Yadav</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Power system dynamics, Wide area monitoring systems, anomaly detection and characterization, AI/ML applications to power systems, and cyber-attack modelling and diagnosis</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~raviyee" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~raviyee" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Saakshi Dhanekar</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Nano-sensors for societal applications, device development, gas- and bio-sensors, MEMS, silicon based devices</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~saakshi" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~saakshi" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Sai Kiran M. P. R.</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Millimeter-wave Communications; Autonomous Vehicular Communications; Internet of Things; Cyber-Physical Systems; Wireless Network Modeling and Analysis</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~saikiran" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~saikiran" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Sandeep Kumar Yadav</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Signal Processing, Condition Monitoring, Image Processing, Data Compression, Blind Source Separation, Artificial Neural Network</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~sy" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~sy" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Shree Prakash Tiwari</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Microelectronics & VLSI Technology, Microfabrication, Organic Electronics, Device Physics and Characterization, New Device Structures</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~sptiwari" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~sptiwari" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Soumava Mukherjee</td>
+            
+            
+            <td>IIT JODHPUR</td>
+            
+            
+            <td>EE</td>
+            
+            
+            <td>Microwave Communication</td>
+            
+            
+            <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~soumava" target="_blank">Profile</a>
+            
+            
+            <a href="http://home.iitj.ac.in/~soumava" target="_blank">Publications</a><p></p></div></td></tr>          
+            <tr><td>Anirban  Ghoshal</td>
+
+
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power Electronics, Distributed Generation, Electric Drives</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/1169/1169.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Arijit  Baral</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>High Voltage Engineering, Condition Monitoring Of Large Power Equipment</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/1060/1060.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Bhukya Krishna Naick</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Electrical Drives, Renewable Energy Sources</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets//uploads/publication/926/publication.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Biplab  Bhattacharyya</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power System</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets//uploads/publication/844/publication.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Gauri  Shankar</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power System</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets//uploads/publication/928/publication.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Devara Vijaya Bhaskar</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power Electronics Applications, Drives, And Microgrid Structure.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/981/981.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Kalyan  Chatterjee</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power Electronics, Multilevel Converters, Motor Drives, Renewable Energy Extraction Etc.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/982/982.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Kartick Chandra Jana</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power System, Soft Computing Application In Power System, Renewable Energy</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/811/811.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Nitai  Pal</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power Electronics, Power Systems, Renewable Energy</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/849/849.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Paresh Kumar Nayak</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power System Protection, Control, And Monitoring. Microgrid Protection.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/1061/1061.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Pradip Kumar Sadhu</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>His Current Areas Of Interest Are Power Electronics Applications, Application Of High Frequency Converter, Energy Efficient Devices, Energy Efficient</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/788/788.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Somnath  Pan</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Reduced Order Modelling & Controller Design, Process Control And Power System Applications</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets//uploads/publication/276/publication.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Sanjoy  Mandal</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Integrated Optics, Optical Signal Processing, Development Of Optical Logic Circuit, Instrumentation, Control System</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets//uploads/publication/869/publication.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Vivekananda  Mukherjee</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Power System Optimization</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets//uploads/publication/886/publication.pdf" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Sukanta  Das</td>
+                
+                
+                <td>IIT DHANBAD</td>
+                
+                
+                <td>CSE</td>
+                
+                
+                <td>Fault Tolerant Control Of Electric Drives, Energy Efficient Operation Of Electrical Drives, Speed Estimation And Control Of Machine And Drives.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitism.ac.in/index.php/Departments/faculties_detail_ee" target="_blank">Profile</a>       
+                
+                
+                <a href="https://www.iitism.ac.in/assets/uploads/publication/923/923.pdf" target="_blank">Publications</a><p></p></div></td></tr>          
+                <tr><td>Pramod Agarwal</td>
+
+
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Electrical Machines, Power Electronics, Microprocessors, Microcomputers Controlled Electric Drives , Electrical Machines, Power Electronics, Microprocessors, Microcomputers Controlled Electric Drives ,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/pramgfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/pramgfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>R.S. Anand</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Microprocessor and Computer Based Instrumentation, Digital Signal and Image Processing, Biomedical Instrumentation, Digital Signal and Image Processing, Microprocessor and Computer Based I, Biomedical Instrumentation, Ultrasonic Imaging in NDE and Medical Diagnosis, Instrumentation and Signal Processing, Biomedical Signal and Image Processing,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/nova/index.php?r=page%2Fview" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/nova/index.php?r=page%2Fview" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Abhisek Kumar Behera</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Sliding mode control; Sampled-data systems; Networked control systems,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Abhisek_K__Behera" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Abhisek_K__Behera" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Avik Bhattacharya</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Electric Vehicle, Power Quality, DC Microgrid, Flexible AC Transmission System, Multilevel Inverter and its Control, Application of Solid State Transformer in WECS, Renewable Energy , Solar inverter topology ,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Avik_Bhattacharya" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Avik_Bhattacharya" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Sohom Chakrabarty</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Control Systems focus on, Sliding Mode Control, Internal Model Control, Biological Systems oriented research in, Modelling and Analysis, AI/ML/DL Applications, Advanced Research on, Multi-Agent Systems, 
+                  Reinforcement Learning, For Project Openings, please go to my website., Control Applications in, Modular Multilevel Converter, Autonomous Ground and Aerial Vehicles, Robotics,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Sohom_Chakrabarty" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Sohom_Chakrabarty" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Biswarup Das</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power Distribution Automation , Facts, Power System Harmonics, Power Distribution Automation , Facts, Power System Harmonics,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/biswafee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/biswafee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Sharmili Das</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>NA</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/shardfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/shardfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Anubrata Dey</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>PWM techniques, Multilevel Converters, Modular Multilevel Coverter, Power Electronics interfaces, Variable speed Drives, EV applications, DC/DC converter, DC/AC and AC/DC converter and their topologies and control technique implementation using Microcontrollers/DSP/FPGA, Control techniques for integration of Energy storage Devices, Optimization techniques, MG applications,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Anubrata_Dey" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Anubrata_Dey" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Arnab Dey</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Nonlinear Systems and Robust Control (broadly), Control of systems with hysteresis nonlinearities, Smart actuators: Dynamics and control, Negative-imaginary systems, Dissipative systems,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Arnab_Dey" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Arnab_Dey" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>E. Fernandaz</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power System Engineering, Power System Engineering ,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/eugfefee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/eugfefee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Sumit GhatakChoudhuri</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power Electronics, Electric Drives, Analysis, DSP Based control, Induction Motor operated in Vector Control Mode, Energy Conservation, Power Quality Improvement using Multi-Pulse Converters, Uni-Modular 
+                  and Multi-Modular UPS Inverter Control for Critical Load Applications, Integration of Solar PV for Grid connected and Standalone applications,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/sgceefee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/sgceefee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Chandra Prakash Gupta</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power Quality, Voltage sag analysis, Application of Wavelet Transforms, Reliability evaluation of po,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/cpg65fee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/cpg65fee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Indra Gupta</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Process Control Applications, Microprocessor Applications, ANN, Online Control Applications, Simulation, Process Control Applications, Microprocessor Applications, ANN, Online Control Applicati, Simulation,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/indrafee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/indrafee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Yogesh Vijay Hote</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Control Systems, Kharitonov's theorem,PID Control, IMC Control, Fractional order Control, LQR Control, NMP Control, Model order Reduction Techniques , Linear and Interval system modelling, Applications in Power Systems, Robust Controller Design, Applications in Load Frequency Control, Inverted Pendulum, Servo Systems, DC-DC Converters,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/yhotefee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/yhotefee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Premalata Jena</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Smart Grid , Smart grid technology and protection, Optimal Placement of Storage devices, Microgrid(AC Microdgrid, DC Microgrid and Hybrid AC-DC Microgrid), Microgrid Protection, Optimal scheduling and operation of Electric Vehicle, Power quality analysis of microgrid system with presence of Renewable sources and Electric vehicle, Signal processing application to power system relaying, micro-PMU for Microgrid and Smart Grid system,Power system Protection, Protection Issues with FACTS Devices, Protection Scheme Development for a line with FACTS devices, Disturbance localization, Signal processing application for disturbance localization,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/pjenafee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/pjenafee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Jishnu Kavil Kambrath</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Modelling and Control of Multi-Megawatt Electro-Mechanical Systems, AC and DC Microgrids Control and Stability, Grid Compliance for Energy Conversion Systems, Grid forming controls for wind turbines, Electrical Drives and Control, Marine Propulsion Systems, Electrification of Transportation Systems, Solar and wind power generation, Electric Vehicles, More Electric Aircrafts,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Jishnu_Kavil_Kambrath" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Jishnu_Kavil_Kambrath" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Dheeraj K. Khatod</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Distribution System Planning, AC/DC Micro-grid, Renewable Energy System, Variable Frequency Transformer,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Dheeraj_K_Khatod" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Dheeraj_K_Khatod" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Deep Kiran</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power System, Deregulation; Optimization; Operation and Analysis; Clustering; Flexibility; Data-driven methods,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Deep_Kiran" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Deep_Kiran" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Ashish Kothyari</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Dynamical system theory, Numerical Linear Algebra, Formal Verification of Control Systems,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Ashish_Kothyari" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Ashish_Kothyari" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Vishal Kumar</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Digital System Design, Embedded System Development, Power System Automation, Power System Restoration, Smart Power Networks, Distributed Generation, Planning and Placement, Microgrids, Operation, Monitoring, and Control,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/vksaxfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/vksaxfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Ganesh Balu Kumbhar</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power and Distribution Transformers, Modeling and simulation, design and analysis, Distributions System Analysis, Distributed generation planning, Volt-Var control and optimization, Electromagnetics and 
+                  Coupled Field Analysis, Applications of coupled field formulations for analysis electrical machines, Finite Element Analysis of Power Apparatus, Finite Element Analysis of electrical machines and transformers, Smart Grid Technologies and Applications, Smart Grid Technologies and Applications,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/gkumbfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/gkumbfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>M. Felix Orlando</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Rehabilitation Robotics:, Design and Control of Hand and Leg Exoskeletons using EMG/EEG signal with Touch/Force/Angular sensor, Medical Robotics:, Real-Time Control of Active Flexible Needle for Percutaneous Intervention, Human Hand Biomechanics:, Redundancy Resolution of Human Fingers while performing Activities of Daily Living, Visual Servoing:, Ball Plate Balancing System using Realtime Vision Feedback, 
+                  Virtual Instrumentation:, Signal Processing and Manipulation, Disaster Robotics:, Design, Development and Control of Rescue Robots, Intelligent Sensors:, Experimental Study, Student Research Projects:, Students can apply for internship for working towards (i) Intelligent Cane, (ii) Ball Plate Control, Robotic Surgery, Teleoperated Master-Slave Robotic Surgery based on Haptics Feedback,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Dr__M__Felix_Orlando" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Dr__M__Felix_Orlando" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>N.P. Padhy</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power System Engineering and AC-DC Smart Grid,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/nppeefee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/nppeefee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Vinay Pant</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>NA</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/vpantfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/vpantfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Mukesh Kr. Pathak</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power Electronics, Electric Vehicle, Solar PV Systems, Control of Electric Motors, Power Converters for Microgrid, Solid State Transformer for SMART Grid,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/mukesfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/mukesfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>G.N. Pillai</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Intelligent Control, Artificial Neural Networks, Neuro-Fuzzy Systems, Machine Learning, Deep Learning.,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/gnathfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/gnathfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Bhavesh Kumar R.Bhalja</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Phasor Measurement Unit, Cyber Security Issues of Power System, Power Quality Improvement, Microgrid, Application of Artificial Intelligence Techniques to Power System, Fault Detection & Classification, 
+                  Power System Planning and Design, Condition Monitoring of Electrical Apparatus, Energy Optimization of EV Charging Station, Digital Protection and Automation, Controlled Switching of Switchgears, Distributed Generation, Smart Grid Technology, Wide Area Monitoring, Protection and Control, Synchrophasor Technology,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Bhavesh_Bhalja" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Bhavesh_Bhalja" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Jeevanand S</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Topic related to Electrical Machines and power electronic drives, Renewable Energy Systems, Diagnosis and prognosis of electrical machines and drives, Power electronic drives, Renewable energy applications, electrical machines and electrical systems, Application of advanced signal analysis and machine learning in Electric drives and renewable energy,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Jeevanand_Seshadrinath" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Jeevanand_Seshadrinath" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Ambalika Sharma</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Biomedical Engineering, Signal Processing, Neural Networks, Biomedical Engineering, Signal Processing, Neural Networks,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/asharfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/asharfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Girish Kumar Singh</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Electrical Machines and Drives, Power System Harmonics, Biomedical Signal Processing, Renewable Energy Generation, Multirate Filter, Remote Image Signal Processing ,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/gksngfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/gksngfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>S.P. Singh</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power Electronics and Electric Drives, Electric Drives , Power Electronic Converters, Renewable Enegy Systems, Variable Speed Generators, ,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/spseefee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/spseefee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>P. Sumathi</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Instrumentation, vibration measurement, capacitance measurement, ultrasonics, Parameter esitmation, on-line estimation of sinusoidal and exponentially decaying sinusoidal signal parameters, Control and signal processing, phase locking schemes, sliding DFT filters, multi-component decomposition, Advanced driver assistance systems, Image processing, DFT with sliding windows, warning systems, Sensors, Interfacing circuits for smart sensors,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/psumifee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/psumifee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Avanish Tripathi</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>High-power and high-speed motor drives, PWM techniques, motor design, power converter technologies and optimization techniques;, Electric Transportation, Multi-motor drives and complex converters;, Grid 
+                  connected converters, High power applications and low switching frequency operation and control,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Avanish_Tripathi" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Avanish_Tripathi" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Manoj Tripathy</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power System Protection, Automation, Smart Grid protection, Microgrid Protection, Cyber Security, Digital/Numerical Relays, Artificial Intelligence Based Relays, Neuro-fuzzy Technique, Protection Scheme 
+                  Development for a Line with FACTS devices, Digital Signal and Image Processing, signal and image processing problems, Applying meaching learning to inverse problems,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/manojfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/manojfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Barjeev Tyagi</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Power System Operation and Control, Power system Deregulation, Voltage and Frequency Control, Wide Area System Monitoring and Control, PMU placement in Transmission and Active Distribution System, , Small Signal Stability Analysis and Control of Wide Area Power System, Stability Analysis and Controller Design, Microgrid Planing Operation and Control, Integration of Renewable Energy Sources, Optimal Planing 
+                  of Microgrid, Operation and Control of MG,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/btyagfee" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/btyagfee" target="_blank">Publications</a><p></p></div></td></tr>
+                  <tr><td>Apurv Kumar Yadav</td>
+                  
+                  
+                  <td>IIT RORKEE</td>
+                  
+                  
+                  <td>EE</td>
+                  
+                  
+                  <td>Motor drives with wide-bandgap (WBG) devices, Induction motor drives, Multilevel inverters, Multiphase motor drives, Static wireless power transfer, Dynamic wireless power transfer, Wide-bandgap enabled 
+                  converters,</td>
+                  
+                  
+                  <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitr.ac.in/~EE/Apurv_Kumar_Yadav" target="_blank">Profile</a>
+                  
+                  
+                  <a href="https://www.iitr.ac.in/~EE/Apurv_Kumar_Yadav" target="_blank">Publications</a><p></p></div></td></tr>
+
+                                                                                            
+                                                                                    
+                                                  
+                                              
+                                                                    
+    
+  
+
+            </tbody>
+        </table>
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+            </script>
+            <script>
+              function myFunction2() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput2");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                  td = tr[i].getElementsByTagName("td")[3];
+                  if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = "";
+                    } else {
+                      tr[i].style.display = "none";
+                    }
+                  }       
+                }
+              }
+              </script>
+
+
+<script>
+  function myFunction3() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput3");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  
+</script>
+        
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+				  content.style.maxHeight = null;
+				} else {
+				  content.style.maxHeight = content.scrollHeight + "px";
+				} 
+			  })
+			}
+		</script>
+			   
+</body>
+</html>
