@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Hello Mf
+    </title>
+    <style>
+        /*	
+	Side Navigation Menu V2, RWD
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+}
+
+.search-box{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search{
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: #22a6b3;
+  padding-right: 40px;
+  color:#fff;
+}
+.input-search::placeholder{
+  color:rgba(255,255,255,.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search{
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:transparent;
+  pointer-events: painted;  
+}
+.btn-search:focus ~ .input-search{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:focus{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+	  font-weight: bold;
+	  text-align: center;
+	  
+	  font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+
+.container td {
+	  font-weight: normal;
+	  border: 1px solid black;
+      width: 100px;
+	 
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: center;
+	  overflow: scroll;
+	  width: 90%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  /* padding-left:2%;   */
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: #2C3446;
+}
+
+.container th {
+	  background-color: #1F2739;
+}
+
+.container td:first-child { color: #FB667A; }
+
+.container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/*
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+*/
+
+    </style>
+</head>
+<body>
+    <h1><span class="blue"></span> <span class="yellow">Professor List (Alphabetical)</pan></h1>
+        <h2> Fields related to Computer Science and engineering</h2>
+        <div class="search-box">
+          <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" id="myInput" class="input-search" onkeyup="myFunction()" placeholder="Search By Professor Name" title="Type in Professor Name">
+        <input type="text" id="myInput2" class="input-search" onkeyup="myFunction2()" placeholder="Search Interests" title="Type Interests ">
+        <input type="text" id="myInput3" class="input-search" onkeyup="myFunction3()" placeholder="Search by College Name" title="Type College Name ">
+      </div>
+
+      <table id="myTable"class="container">
+        <thead>
+            <tr>
+                <th><h1 style="text-align:center">Name</h1></th>
+                <th><h1 style="text-align:center">College</h1></th>
+                <th><h1 style="text-align:center">Branch</h1></th>
+                <th><h1 style="text-align:center">Interests</h1></th>
+                <th><h1 style="text-align:center">Links</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Prof. B.J. Alappat</td>
+
+
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Environmental Engineering, Solid Waste Management, Incineration, Fluidised Bed Operations.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~alappat/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~alappat/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. R. Ayothiraman</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Soil Dynamics and Earthquake Engineering, Pile Foundations, Deep Excavations in Urban Areas, Problematic Soils and Ground Improvement</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Suresh Bhalla</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Smart Material and Structures, Structural Health Monitoring, Non-Destructive Evaluation, Bio-Mechanics, Engineered Bamboo Structures.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~sbhalla/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~sbhalla/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. B. Bhattacharjee</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Durability of Concrete, Rebar Corrosion, Cement Based Composites, Construction Technology, Building Science.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Shashank Bishnoi</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Cement, Supplementary Cementitious Materials, Concrete, Building Materials, Sustainability, Durability, Repair, Seismic Retrofitting and Strengthening of Structures.</td>  
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~bishnoi/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~bishnoi/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. B.R. Chahar</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Seepage, Drainage, Canal Design.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~chahar/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~chahar/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Tanusree Chakraborty</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Foundation Engineering, Blast Loading in Soil, Soil Plasticity and Constitutive Modeling, Soil-Structure Interaction and Underground Construction in Soil and Rock.</td>    
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~tanusree/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~tanusree/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Manoj Datta</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Geotechnical Engineering, Soil Mechanics, Foundations, Geoenvironment, Landfills, Ash Ponds, Tailings, Ground Improvement, Slope Stability, Dams, Offshore Geotechnology.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. N.K. Garg</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Water Resources Systems, Finite Element Watershed Modelling, Irrigation Management, CAD.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. A.K. Gosain</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Integrated Watershed Modelling, GIS, Hydrological Modelling, Irrigation Management, Climate Change, Environmental Impact Assessment.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~gosain/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~gosain/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Ashok Gupta</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Structural Engineering, Artificial Intelligence, Technology Enhanced Learning, Web Based Courses.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. A.K. Jain</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Earthquake Resistant Analysis of Structures, Wind Load Analysis of Structures, Dynamic Behaviour of Offshore Structures.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~akjain/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~akjain/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. K.N. Jha</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Construction Project Management, Project Success Factor, Asset Management, Schedule Cost, Quality and Safety.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~knjha/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~knjha/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. R.R. Kalaga</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Mass Transit Planning, Traffic Flow Modelling and Traffic Safety.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. D.R. Kaushal</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Hydraulic and Water Resources Engineering, Fluid Mechanics, Sediment Transport, Hydraulic Structures, Multiphase Flows, Slurry Pipeline and Flume, Computational Fluid Dynamics, Flow Instrumentation.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. A.K. Keshari</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Hydrological and Environmental Modelling, Sustainable Development, Remote Sensing and GIS, FEM, Waste Management and Sewerage System, Policy Analysis and Risk Assessment, Snow and Avalanche.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Mukesh Khare</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Air and Vehicular Pollution Modelling, Indoor Air Pollution.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Rakesh Khosa</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Water Resources Systems, Stochastic Processes, Conflict Resolution and Hydrologic Modelling of Large River Basin.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~rkhosa/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~rkhosa/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Arun Kumar</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Human Health Risk Assessment, Nanoparticles, Water Treatment, Uncertainty Analysis.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Alok Madan</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Structural Engineering, Nonlinear Structural Dynamics, Concrete Structures, Computing in Structural Engineering, Structural Masonry.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~madan/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~madan/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Bappaditya Manna</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Dynamic Soil-Pile Interaction, Pile Foundation, Machine Foundation, Stability of Reinforced Slopes.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~bmanna/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~bmanna/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Shashi Mathur</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Groundwater Contamination, Bioremediation of Soils, Flow through Porous Media, Phyto-Remediation, Biodegradation in Landfills.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Vasant Matsagar</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Multi-Hazard Protection of Structures, Earthquake, Wind, Blast and Fire Engineering, Fibre reinforced Polymer Composites.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~matsagar/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~matsagar/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. A.K. Nema</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Environmental Engineering, Modelling, Simulation and Optimisation of Environmental Systems, Integrated Waste Management, Environmental Impact Assessment.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~aknema/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~aknema/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. K.S. Rao</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Rock Mechanics and Rock Engineering, Geotechnical Engineering, Engineering Geology, Seismic Microzonation, Physical and Numerical modelling, Underfround Structures and Stability of Slopes.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~raoks/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~raoks/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Dipti Ranjan Sahoo</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Earthquake Engineering, Large Scale Testing, Supplemental Damping and Energy Dissipation Devices, Performance-Based Seismic Design, Steel-Fibre Reinforced Concrete.</td>   
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~drsahoo/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~drsahoo/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. J.T. Shahu</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Geotechnology for Roads and Railway Tracks, Numerical Modelling of Soil Behaviour, Ground Improvement, Soil Dynamics, Geosynthetics.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://web.iitd.ac.in/~shahu/" target="_blank">Profile</a>
+                
+                
+                <a href="http://web.iitd.ac.in/~shahu/" target="_blank">Publications</a><p></p></div></td></tr>
+                <tr><td>Prof. Geetam Tewari</td>
+                
+                
+                <td>IIT DELHI</td>
+                
+                
+                <td>CIVIL</td>
+                
+                
+                <td>Transport Planning and Policy, Traffic Safety, Public Transport and NMV Planning.</td>
+                
+                
+                <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="NA" target="_blank">Profile</a>
+                
+                
+                <a href="NA" target="_blank">Publications</a><p></p></div></td></tr>
+
+                <tr><td>PROF. DEEPANKAR CHOUDHURY</td>
+
+
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Welcome To My Website. My Area Of Research And Teaching Expertize Is In 'Geotechnical Engineering' With Emphasis On 'Geotechnical Earthquake Engineering', 'Soil Dynamics', 
+                    'Foundation Engineering', 'Computational Geomechanics', 'Dynamic Soil-Structure Interaction', 'Liquefaction' Etc. For Further Details, Please Visit My Website: Www.civil.iitb.ac.in/~dc/</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-deepankar-choudhury" 
+                    target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. PRADIPTA BANERJI</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Earthquake Vibration Control; Damage Detection In Structures; Guided Wave Propagation And Scattering In Structures; Condition/health Monitoring Of Bridge Structures;</td>  
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-pradipta-banerji" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. ALOK GOYAL</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Structural Dynamics And Earthquake Engineering; Vibration Control; Seismic Hazard Assessment; Service Life Assessment, Repair, Rehabilitation And Retrofitting Of RC Buildings;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-alok-goyal" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. RAVI SINHA</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Dynamic Behaviour Of Structures And Equipment; Development And Design Of Energy-absorbing And Base-isolating Devices; Earthquake Resistant Design And Vulnerability Evaluation Of Structures And Facilities;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-ravi-sinha" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. D N SINGH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Environmental Geotechnology; Valorization Of Industrial Waste(s); Gas Hydrates</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-d-n-singh" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. YOGESH DESAI</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Finite Element Analysis; Analysis And Control Of Vibrations; Structural Dynamics; Composite Mechanics; Rehabilitation Of Deteriorated Structures; Computational Mechanics;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-yogesh-desai" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. K V KRISHNA RAO</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Sustainable Urban Transportation Planning, Land Use Transport Modelling, Travel Survey Design And Analysis;Travel Behaviour And Choice Modelling, Air Travel Demand Modelling, Capacity And Level Of Service Of Traffic Facilities.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-k-v-krishna-rao" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. JANGID R S</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Base Isolation For Earthquake-resistant Design; Vibration Control Using Tuned Mass Dampers; Non-linear Dynamic Analysis; Non-classically Damped Systems; Stochastic Earthquake Analysis; Active Control Of Structures;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-jangid-r-s" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. VISWANADHAM B V S</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Centrifugemodelling; Environmental Geotechnics; Soil Reinforcements; Slope Stabilization; Waste Materials Utilization;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-viswanadham-b-v-s" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. KAPIL GUPTA</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Urban Drainage/storm Water Management; Sedimentation In Channels And Rivers; Urban Water Infrastructure Management; Hydrologic Disaster Management; Water Quality Modelling 
+                    In Rivers,Ponds, Lakes And Estuaries;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-kapil-gupta" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. T I ELDHO</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Groundwater Flow And Pollution Investigation; Computational Fluid Dynamics; Coastal Hydrodynamics; Watershed Management; Application Of Numerical Methods In Water And Environment;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-t-i-eldho" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. NARESH K CHANDIRAMANI</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Nonlinear Dynamics; Stability And Control; Computational Mechanics; Solid Mechanics;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-naresh-k-chandiramani" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. TOM V MATHEW</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Traffic Flow Modeling And Simulation; Transportation Network Optimization, Traffic Control And Management;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-tom-v-mathew" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. V JOTHIPRAKASH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Water Resources Systems Analysis: Reservoir Operation, Policy Issues, Multi-objective Analysis, Conventional As Well As Soft Computing Optimization Techniques, Basin Wise Water Resources Estimation. Stochastic Hydrological Modeling: Reservoir Sedimentation. Rain Water Harvesting: Airport And Road Side Storm Water Drainage System. Water Supply And Sewerage Systems: Irrigation Water Management. Genetic Algorithms And Genetic Programming: Artificial Neural Networks. Single Site And Multi Site Reservoir Inflow Prediction, 
+                    Rainfall-runoff Modeling, Meteorological Parameter Prediction. Non-linear Dynamic Analysis Using Chaos Theory: Chaotic Analysis Of Rainfall, Runoff, Meteorological Parameters Catchment Classification Using Chaotic Analysis. Singular Spectrum Analysis: Single Variate And Multi Variate Time Series Analysis.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-v-jothiprakash" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. SIDDHARTHA GHOSH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Earthquake Engineering; Reliability Of Structures; Structural Dynamics; Vulnerability/fragility Assessment; Risk Analysis; Uncertainty Quantification; Structural Steel; Cold-formed Steel; Inelastic Analysis And Design; Stone Block Masonry</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-siddhartha-ghosh" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. ASHISH JUNEJA</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Dynamic soil behaviour, tunnelling and underground space, deep foundations and ground improvement works.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-ashish-juneja" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. SUBIMAL GHOSH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Hydro-climatology : Regional Modeling And Understanding Of Indian Monsoon; Statistical Downscaling; Atmosphere- Land Surface Interactions; Climate Change Projections And Impacts Assessment; Seasonal And Sub-seasonal Prediction Of Monsoon; Hydro-climatic Extremes; Hydrology : Meso-scale Hydrologic Modeling; Uncertainty Modeling; Eco-hydrology;</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-subimal-ghosh" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. SAUVIK BANERJEE</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Structural Health Monitoring Using Vibration And Wave Based Approaches, Condition Assessment Of Structures Using NDT, Ultrasonic NDE And Imaging Of Materials, Passive Acoustic Emission (AE) Monitoring Of Structures, Guided Wave Propagation, Modelling Of Laminated Composite And Sandwich Structures, FRP Retrofitting Of Structures, Impact Response Of Structures</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-sauvik-banerjee" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. GOPAL R PATIL</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Transportation Systems Planning; Transportation Network Optimization; Traffic Operations; And Freight Transportation Modeling.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-gopal-r-patil" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. DASAKA MURTY</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Studies On Earth Pressure Reduction Techniques, Field Behaviour Of Rock Socketed Piles,Stabilization Of Problematic Soils, Mitigation Of Railway-borne Vibrations, Deep Excavation Supporting Systems</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-dasaka-murty" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. BELLIE SIVAKUMAR</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Rainfall and Streamflow Modeling; Hydrologic Extremes; Sediment Transport in Rivers; Large-scale Water Projects; Transboundary Water Management; Groundwater Flow and Transport; Water quality in Rivers; Ecosystem Modeling; Human-Water Interactions; Hydrology Education; Complex Systems and Networks; Chaos Theory; Scaling and Fractals.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-bellie-sivakumar" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. VEDAGIRI PERUMAL</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Traffic Safety, Modeling Pedestrian Behavior, Traffic Flow Modeling And Simulation, Traffic Management And Control, Public Transit System Design And Operation.</td>        
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-vedagiri-perumal" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. JANGA REDDY MANNE</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Evolutionary Algorithms For WRS Optimization; Reservoir Operation, Water Supply Systems; Surface Water Hydrology And Watershed Management; Statistical Modeling And Forecasting, Risk Analysis Of Floods And Droughts; Copulas For Uncertainty Modeling; Applications Of Softcomputing Techniques In WRM; Impacts Of Climate Change On Water Resources And Agriculture.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-janga-reddy-manne" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. MANDAR INAMDAR</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Application Of Structural, Solid, Fluid, And Statistical Mechanics To Biological Systems; Mechanics Of Bio-polymer Networks; Cellular Adhesion And Motility; DNA Mechanics; 
+                    Mechanics Of Bio-films</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-mandar-inamdar" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. BALAJI RAMAKRISHNAN</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Coastal Engineering, Wave-structure Interaction, Tidal Hydrodynamics, Coastal Processes</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-balaji-ramakrishnan" 
+                    target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. RAMSANKARAN RAAJ</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Remote Sensing And GIS Applications, High Definition Surveying, Surface Hydrological Processes</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-ramsankaran-raaj" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. NAGENDRA RAO VELAGA</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Traffic And Intelligent Transportation Systems. Transportation Accessibility And Mobility . GIS And GNSS Applications In Transport</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-nagendra-rao-velaga" 
+                    target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. AVIJIT MAJI</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Machine intelligence and computer vision in alignment development;Optimization in transportation infrastructure development; Effects of highway infrastructure on driver behavior; Performance based highway infrastructure design; Innovative highway infrastructure design; High speed rail infrastructure planning; Transportation safety and security</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-avijit-maji" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. MANASA RANJAN BEHERA</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Ocean And Coastal Engineering; Computational Ocean And Coastal Hydrodynamics; Modelling Of Tide, Storm And Tsunami; Impact Of Changing Climate; Wave And Tidal Energy; Wave-Current Interaction; Multi-phase Flow</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-manasa-ranjan-behera" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. SWAGATA BASU</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Earthquake Engineering, Bridge Engineering, Risk And Reliability Analysis, Structural Resilience, Bridge Performance Assessment Under Multiple Hazards.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-swagata-basu" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. PRASENJIT BASU</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Energy Geotechnics; Thermo-hydro-mechanical Characterization Of Soil; Coupled (thermo-hydro) Flow In Ground; Engineering Of Foundations; Computational Geomechanics;</td>   
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-prasenjit-basu" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. DHARAMVEER SINGH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Characterization Of Pavement Materials (Asphalt, Hot Mix Asphalt, Soil, And Aggregates), Recycled Asphalt Mixes, Warm Mix Asphalt, Locally Available Materials, Stabilization Of Soil And Aggregates, Intelligent Asphalt Compaction, Constitutive Modeling Of Pavement Materials, Simple Performance Tests (Rutting, Fatigue, Dynamic Modulus) On Asphalt Mixes, Pavements (Flexible And Rigid) Design And Evaluation, Forensic Investigation Of Pavements, Pavement Maintenance And Rehabilitation</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-dharamveer-singh" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. PRAKASH NANTHAGOPALAN</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Rheology Of Cement Based Materials;Design And Development Of Ultra High Performance Concrete ; Cement And Lime Based Plasters/renders; Product Development Using Industrial 
+                    And Agro Based By-products.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-prakash-nanthagopalan" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. BASUDEV BISWAL</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Hydrology</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-basudev-biswal" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. ARGHADEEP LASKAR</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Experimental Study Of Reinforced And Prestressed Concrete, Finite Element Analysis Of Concrete Structures, Seismic Simulation.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-arghadeep-laskar" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. SANTIRAM CHATTERJEE</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Offshore Geotechnical Engineering, Pipelinegeotechnics, Numerical Modelling, Offshore Soil Characterization.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-santiram-chatterjee" 
+                    target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. JAYADIPTA GHOSH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Structural Reliability And Risk Assessment;Earthquake Engineering; Ageing And Corrosion Deterioration Problems; Seismic Fragility Analysis;Bridge Engineering; Machine Learning</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-jayadipta-ghosh" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. RIDDHI SINGH</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Rainfall Runoff Modelling, Model Diagnostics, Hydrologic Predictions In Data Scarce Regions, Catchment Classification And Hydrologic Similarity, Multi-stakeholder Analysis 
+                    Of Resource Constrained Systems, Decision Making Under Uncertainty.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-riddhi-singh" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. AMIT DAS</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Design And Analysis Of Steel And Concrete Structures,Formwork Analysis And DesignComputational Mechanics, Finite Element Analysis, Field Dislocation Mechanics, Analysis Of 
+                    PDEs.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-amit-das" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. VENKATA SANTOSH KUMAR DELHI</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Infrastructure Project Governance, Construction Project Management, Organization In Construction Projects And Infrastructure Sustainability, Structural Engineering</td>    
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-venkata-santosh-kumar-delhi" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. INDU J</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Microwave Remote Sensing; Uncertainty In Radar Based Rainfall; Nowcasting Of Precipitation; Applications Of Remote Sensing In Hydrology And Water Resources Engineering; Image Processing Using Syntheic Aperture Radar (SAR); Fuzzy Logic.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-indu-j" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. MEERA RAGHUNANDAN</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Earthquake Engineering, Probabilistic Seismic Risk Analysis Of Structures, Performance Prediction Of Structures Under Dynamic Loads, Building Code Evaluation.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-meera-raghunandan" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. ARPITA MONDAL</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Detection, Attribution And Impact Of Climate Change, Spatio-Temporal Modeling Of Hydroclimatic Extremes, Regionalization And Frequency Analysis Of Floods And Droughts, Risk Assessment Under Non-stationarity, Urban Flooding, Hydrologic Statistics And Machine Learning, Uncertainty Modeling.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-arpita-mondal" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. MUHAMMAD SALMAN</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Construction Materials, Concrete Technology, Alkali Activation, Geopolymerisation, Mineral Carbonation, Slags, Repair And Rehablitaiton Of Constructed Facilities</td>      
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-muhammad-salman" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. MANISH KUMAR</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Earthquake Engineering, Seismic Isolation, Blast And Impact Resistant Structures</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-manish-kumar" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. ALBERT THOMAS</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Sustainable Construction Management Practices, Building Energy Simulation, Lean Construction, Life Cycle Energy Analysis, Project Scheduling And Earned Value Analysis, Construction Project Lifecycle Management</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-albert-thomas" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. ESWAR RAJASEKARAN</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Thermal Remote Sensing, Modelling Evapotranspiration From RS, RS Applications In Hydrology, Drought Monitoring.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-eswar-rajasekaran" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. SRINEASH V K</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Coastal Engineering, Hydrodynamics, Wave-structure interaction, Coastal resilience, Climate change adaptation studies.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-srineash-v-k" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. PINOM ERING</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Landslides, probabilistic methods, risk and reliability analysis, Mesh-free techniques (Material Point Method), large deformation problems.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-pinom-ering" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>PROF. M C DEO</td>
+                    
+                    
+                    <td>IIT BOMBAY</td>
+                    
+                    
+                    <td>CIVIL</td>
+                    
+                    
+                    <td>Ocean Engineering(wave Hydrodynamics, Ocean Structures, Statistical And Stochastic Analysis, Neural Networks And Soft Computing). Hydrology (neural Networks And Soft Computing).</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.civil.iitb.ac.in/faculty/details/prof-m-c-deo" target="_blank">Profile</a>
+                    
+                    
+                    <a href="" target="_blank">Publications</a><p></p></div></td></tr>
+
+                
+            </tbody>
+        </table>
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+            </script>
+            <script>
+              function myFunction2() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput2");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                  td = tr[i].getElementsByTagName("td")[3];
+                  if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = "";
+                    } else {
+                      tr[i].style.display = "none";
+                    }
+                  }       
+                }
+              }
+              </script>
+
+
+<script>
+  function myFunction3() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput3");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  
+</script>
+        
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+				  content.style.maxHeight = null;
+				} else {
+				  content.style.maxHeight = content.scrollHeight + "px";
+				} 
+			  })
+			}
+		</script>
+			   
+</body>
+</html>
