@@ -41,6 +41,14 @@ def menubar():
 @app.route('/csestatic.html')
 def csestatic():
     return render_template('csestatic.html')
+
+@app.route('/eeestatic.html')
+def eeestatic():
+    return render_template('eeestatic.html')
+
+@app.route('/civilstatic.html')
+def civilstatic():
+    return render_template('civilstatic.html')
 #hehe
 @app.route('/home.html')
 
