@@ -1,7 +1,4 @@
-import firebase_admin
-import firebase_admin.firestore
-from firebase_admin import credentials
-from firebase_admin import firestore
+
 from flask import Flask, render_template, request
 
 def add_values_in_dict(sample_dict, key, list_of_values):
@@ -42,13 +39,10 @@ def menubar():
 def csestatic():
     return render_template('csestatic.html')
 
-@app.route('/eeestatic.html')
-def eeestatic():
-    return render_template('eeestatic.html')
-
 @app.route('/civilstatic.html')
-def civilstatic():
+def csestatic():
     return render_template('civilstatic.html')
+    
 #hehe
 @app.route('/home.html')
 
