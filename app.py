@@ -11,9 +11,7 @@ def add_values_in_dict(sample_dict, key, list_of_values):
 
 app = Flask(__name__)
 headings = ("Name","Role")
-cred = credentials.Certificate("serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
-db= firestore.client()
+
 
 
 
@@ -40,9 +38,12 @@ def csestatic():
     return render_template('csestatic.html')
 
 @app.route('/civilstatic.html')
-def csestatic():
+def civilstatic():
     return render_template('civilstatic.html')
-    
+
+@app.route('/mechanicalStat.html')
+def mechanicalStat():
+    return render_template('mechanicalStat.html')
 #hehe
 @app.route('/home.html')
 
