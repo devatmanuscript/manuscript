@@ -1,0 +1,5762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Hello Mf
+    </title>
+    <style>
+        /*	
+	Side Navigation Menu V2, RWD
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+}
+
+.search-box{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search{
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: #22a6b3;
+  padding-right: 40px;
+  color:#fff;
+}
+.input-search::placeholder{
+  color:rgba(255,255,255,.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search{
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:transparent;
+  pointer-events: painted;  
+}
+.btn-search:focus ~ .input-search{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:focus{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+}
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+	  font-weight: bold;
+	  text-align: center;
+	  
+	  font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+
+.container td {
+	  font-weight: normal;
+	  border: 1px solid black;
+      width: 100px;
+	 
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: center;
+	  overflow: scroll;
+	  width: 90%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  /* padding-left:2%;   */
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: #2C3446;
+}
+
+.container th {
+	  background-color: #1F2739;
+}
+
+.container td:first-child { color: #FB667A; }
+
+.container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #FFF842;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/*
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+*/
+
+    </style>
+</head>
+<body>
+    <h1><span class="blue"></span> <span class="yellow">Professor List (Alphabetical)</pan></h1>
+        <h2> Fields related to Computer Science and engineering</h2>
+        <div class="search-box">
+          <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" id="myInput" class="input-search" onkeyup="myFunction()" placeholder="Search By Professor Name" title="Type in Professor Name">
+        <input type="text" id="myInput2" class="input-search" onkeyup="myFunction2()" placeholder="Search Interests" title="Type Interests ">
+        <input type="text" id="myInput3" class="input-search" onkeyup="myFunction3()" placeholder="Search by College Name" title="Type College Name ">
+      </div>
+
+
+        
+        <table id="myTable"class="container">
+            <thead>
+                <tr>
+                    <th><h1 style="text-align:center">Name</h1></th>
+                    <th><h1 style="text-align:center">College</h1></th>
+                    <th><h1 style="text-align:center">Branch</h1></th>
+                    <th><h1 style="text-align:center">Interests</h1></th>
+					<th><h1 style="text-align:center">Links</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Anand Kumar S</td>
+
+
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Surface Engineering, Fretting Wear, Fatigue & Fracture, Experimental Tribology, Non-traditional Machining, Artificial Neural Network for Wear Prediction. Natural Fiber Reinforced Composites, FEM of Metal 
+                    Forming Processes, Additive Manufacturing.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~anandkumars" target="_blank">Profile</a>   
+                    
+                    
+                    <a href="nil" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Arvind K Rajput</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Machine Design, Mechanics of Solids, Engineering Mechanics, Machine Drawin</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~arvindkrajput" target="_blank">Profile</a> 
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~arvindkrajput" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>B. Satya Sekhar</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Hydrogen Energy,Renewable Energy Systems,Energy Conversion and Storage,Fuel Cells,Sorption Heating and Cooling Systems
+                    </td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~bsatyasekhar" target="_blank">Profile</a>  
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~bsatyasekhar" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Goutam Dutta</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Nuclear reactor thermal-hydraulics and kinetics, Numerical fluid flow and heat transfer</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~goutamdutta" target="_blank">Profile</a>   
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~goutamdutta" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Navneet Kumar</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Fluid and thermal, Agricultural technologies, Electronic cooling devices, Pollution, Contamination & decontamination, Fluid-structure interaction, Constructed wetlands</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~navneetkumar" target="_blank">Profile</a>  
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~navneetkumar" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Pothukuchi Harish</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Boiling Heat Transfer,Multiphase Flows,Fluid Structure Interaction</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~pothukuchiharish" target="_blank">Profile</a>
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~pothukuchiharish" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>R.T. Durai Prabhakaran</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Fibre Reinforced Polymer Composites â€“ Design and Manufacturing,Carbon/Carbon Composites,Biomaterials & Natural Fibre Composites,Mechanics of Composite Materials,Composites Recycling</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~rtduraiprabhakaran" target="_blank">Profile</a>
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~rtduraiprabhakaran" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Rakesh Singhai</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Electric and hybrid vehicles design,Manufacturing processes,Process Engineering</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~rakeshsinghai" target="_blank">Profile</a> 
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~rakeshsinghai" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Roshan Udaram Patil</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>XFEM, Phase Field Method, Multi-scale Method</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~roshanudarampatil" target="_blank">Profile</a>
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~roshanudarampatil" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Sahil Kalra</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Vibration and Control, Robotics and Control, Mechatronics, Modal Analysis, Smart Materials and Structures, Mechanics of Shape Memory Alloys, FE Analysis (Static, Dynamic, Modal Analysis), Reconfigurable Space Structures, Electromagnetic RF Simulations, Image Processing.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~sahilkalra" target="_blank">Profile</a>    
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~sahilkalra" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Samrat Rao</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Fluid Turbulence, Atmospheric Fluid Dynamics, Cloud-Atmosphere Interactions, Computational Fluid Dynamics</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~samratrao" target="_blank">Profile</a>     
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~samratrao" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Saurabh Biswas</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Reduced order modeling, Hysteresis, Frictional systems, Dynamics and vibration, Large rotation problems</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~saurabhbiswas" target="_blank">Profile</a> 
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~saurabhbiswas" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Seikh Mustafa Kamal</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Plasticity, Autofrettage, Stress analysis, Computational mechanics, Metal forming and computational manufacturing, Design for manufacturing and assembly</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~seikhmustafakamal" target="_blank">Profile</a>
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~seikhmustafakamal" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Shanmugadas K.P</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Fuel injector development for rocket and aero engines, micro-gas turbine combustors, Droplet impingement, and wall filming</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~shanmugadaskp" target="_blank">Profile</a> 
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~shanmugadaskp" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Shiva S</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Laser Additive Manufacturing, Laser Annealing, Laser shock peening, Laser Surface Processing, Wire Arc Additive Manufacturing (WAAM), CMT Welding, MIG Welding, Cladding, Shape Memory Alloys, Smart Materials.</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~shivas" target="_blank">Profile</a>        
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~shivas" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>V Rajkumar</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Additive Manufacturing, Direct wiriting of single crystal alloys. Automated fibre placement process, Selective laser sintering, Robotic 3D composites, Biopolymers, Polymer nanocomposites</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~vrajkumar" target="_blank">Profile</a>     
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~vrajkumar" target="_blank">Publications</a><p></p></div></td></tr>
+                    <tr><td>Vijay Kumar Pal</td>
+                    
+                    
+                    <td>IIT JAMMU</td>
+                    
+                    
+                    <td>CSE</td>
+                    
+                    
+                    <td>Conventional and non-conventional machining (Micro-EDM/ECM, AWJM, USM, LASER machining etc.), Tribology, machining of UHTCs, Biomaterials, Nano technology, super hydrophobic surfaces, large area micro/nano texturing, Composites</td>
+                    
+                    
+                    <td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~vijaykumarpal" target="_blank">Profile</a> 
+                    
+                    
+                    <a href="https://iitjammu.ac.in/mechanical_engineering/faculty-list/~vijaykumarpal" target="_blank">Publications</a><p></p></div></td></tr>
+            <tr><td>Krishnakant Agrawal</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Turbulent reacting flows, Aero-acoustics, Combustion Dynamics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/krishnakant-agrawal" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/krishnakant-agrawal" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Aravindan, S</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Ceramics, Composites, Welding, Nano-Manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/aravindan-s" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/aravindan-s" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Bahga, Supreet Singh</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Microfluidics and nanofluidics, electrohydrodynamics, heat transfer</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/bahga-supreet-singh" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/bahga-supreet-singh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Bhatnagar, Naresh</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>FRP Composite materials, Processing and Manufacturing, Injection Molding , Biomaterails</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/bhatnagar-naresh" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/bhatnagar-naresh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Bolia, Nomesh</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Operations Research, Stochastic Modeling, Application of MDP to various control problems, Application of OR to logistics and Economics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/bolia-nomesh" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/bolia-nomesh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Chawla, Anoop</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>CAD, CAE, Dynamics, Bio-Mechanics, Road safety, Impact and Blast Mechanism</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/chawla-anoop" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/chawla-anoop" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Darpe, A. K.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Machinery Health Monitoring, Rotor Dynamics, Vibration and Noise Engg.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/darpe-ak" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/darpe-ak" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dasgupta,Debabrata</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Microfluidics and microscale transport processes, Computational Fluid Dynamics, multiphase transport</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/dasgupta-debabrata" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/dasgupta-debabrata" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Datla, Naresh Varma</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Fracture and fatigue, Composites, Biomechanics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/datla-naresh-varma" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/datla-naresh-varma" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Datta, Subhra</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Micro-scale fluid mechanics, lectrokinetics, microfluidics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/datta-subhra" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/datta-subhra" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Deshmukh, S.G.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Supply Chain Management, Quality Management, Information Systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/deshmukh-sg" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/deshmukh-sg" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dubey, Devendra Kr.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Computational materials science, Molecular modeling, Nanomechanics, Biomaterials and Biomechanics, Finite Element Modeling</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/dubey-devendra-kr" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/dubey-devendra-kr" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dutt, J. K.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Rotor Dynamics, Vibration and Control</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/dutt-jk" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/dutt-jk" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ghosh, Sudarsan</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Grinding of Ceramics and Superalloys, Machining of Titanium alloys, Surface Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/ghosh-sudarsan" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/ghosh-sudarsan" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Goyal, Anurag</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Thermo-fluid Systems, Heat Transfer, Refrigeration and Air-conditioning, Waste-heat Recovery, Thermal Energy Storage, Building Energy Efficiency, Water Purification and Desalination</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/goyal-anurag" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/goyal-anurag" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Gupta, Amit</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Energy Storage, Flapping Wing Aerodynamics, Microfluidics.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/gupta-amit" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/gupta-amit" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ghosh Arnob</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Game Theory, Stochastic Optimization, Resource Allocation, Smart Grid, Multi-agent learning, Mechanism Design, Transportation Network.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/arnob-ghosh" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/arnob-ghosh" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Hirani Harish</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Bearings (Hydrodynamic, rolling element, and magnetic), Synthesis and application of Smart (Magnetorheological fluids)</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/hirani-harish" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/hirani-harish" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Jain, Sanjeev</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Solar cooling, Building energy efficiency, decentralized energy systems, natural refrigerants</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/jain-sanjeev" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/jain-sanjeev" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Jha, Sunil</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Advanced machining and Finshing Processses, Micro and Nanofinshing, Mechatronics, Robotics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/jha-sunil" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/jha-sunil" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Kale, S.R.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Heat Transfer, Fluid Mechanics, Particle-Laden Flows, Combustion and Energy Conversion</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/kale-s-r" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/kale-s-r" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Khatait, Jitendra Prasad</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Precision machine design, Flexures, Medical devices, Robotics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/khatait-jitendra-prasad" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/khatait-jitendra-prasad" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Kohli, Sangeeta (Ms)</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Heat Transfer, Fluid Mechanics, Renewable Energy Technology</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/kohli-sangeeta" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/kohli-sangeeta" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Kumar, Mayank</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Multiphysics Simulations of Energy Conversion Systems, Turbulent Multiphase Reacting Flows, Coal Gasification & Clean Coal Technology</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/kumar-mayank" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/kumar-mayank" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Meena, Kusum</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Additive manufacturing, Auxetic metamaterials, Laser material processing.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/kusum-meena" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/kusum-meena" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Modak, S. V.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Vibration Engineering, Experimental Modal Analysis, Finite Element Model Updating in Structural Dynamics, Vibro-acoustics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/modak-sv" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/modak-sv" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Mukherjee, Sudipto</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Mechanism , Robotics, Mechanical system Design, Impact Biomechanics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/mukherjee-sudipto" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/mukherjee-sudipto" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Mukherjee, Kaushik</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Orthopaedic Biomechanics & Implant Design, Developmental Biomechanics,Bone and Joint Mechanobiology, Mechanics of Human Movement, Finite Element Analysis</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/kaushik-mukherjee" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/kaushik-mukherjee" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Mukhopadyay,Prithviraj</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Materials and Manufacturing (Machining, Tool Development, Joining, Surface Coating Tech.)</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/prithviraj-mukhopadyay" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/prithviraj-mukhopadyay" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pandey, P. M.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Rapid Prototyping , Unconventional Machining, Finite Elements , CAD/CAM</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/pandey-p-m" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/pandey-p-m" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pandey, R.K.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Bearing lubrication, Tribological elements design, Engine tribology, Lubrication in metal forming</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/pandey-r-k" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/pandey-r-k" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Premachandran, B.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Heat transfer, Computational Fluid Dynamics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/premachandran-b" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/premachandran-b" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rama Krishna K</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Kinematics and Mechanisms, Geometric Modeling for CAD and Manufacturing, Mechanics and Machine Design</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/rama-krishna-k" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/rama-krishna-k" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ramamohan, Varun</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Probabilistic modeling, simulation and optimization, with applications in healthcare systems engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/varun-ramamohan" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/varun-ramamohan" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rao, P. V.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Machining of difficult to machine materials, Grinding of Ceramics, Micro/Nano Manufacturing, Sustainable Machining</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/rao-pv" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/rao-pv" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ravi Kumar, Digavalli</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Metal Forming, Mechanical Metallurgy</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/ravi-kumar-digavalli" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/ravi-kumar-digavalli" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ravi, M.R.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Heat Transfer, Computational Fluid Dynamics, Combustion, Biomass energy, Rural energy systems.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/ravi-mr" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/ravi-mr" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ray, Anjan</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Combustion, Heat transfer</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/ray-anjan" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/ray-anjan" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ray, Bahni</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Multiphase Flow, Physics of Fluids, Micro fluidics, Computational Fluid Dynamics, Stability analysis, Traffic flow</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/dr-bahni-ray" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/dr-bahni-ray" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Saha, S. K.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Multibody Dynamics, Robotics, Design, Mechatronics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/saha-sk" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/saha-sk" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sarkar, Sagar</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Laser Material Processing, Laser Additive Manufacturing, Online Process Monitoring and Control, AI and ML in Additive Manufacturing, Fatigue and Fracture in Additive Manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/sarkar-sagar" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/sarkar-sagar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sinha, Sujeet Kumar</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Nano-tribology, Bio-tribology, Polymer tribology, Materials in Mechanical Design</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/sinha-sujeet-kumar" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/sinha-sujeet-kumar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Singh, S. P.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Dynamics of Rotary Machinery, Composite Materials, Machine Design , Active Vibration Control, Nano-Mechanics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/singh-sp" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/singh-sp" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Subbarao, P.M.V.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Experimental Turbulence, Tomography, Power Generation Systems and I.C. Engines</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/subbarao-pmv" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/subbarao-pmv" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shaurya Shriyam</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Data-driven simulation (robotics/healthcare); Networks in public systems; Multi-agent planning and reinforcement learning.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/shaurya-shriyam" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/shaurya-shriyam" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Talukdar, Prabal</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Radiative heat transfer, Porous Media, Convective Drying, Reheating Furnace, Inverse Problems, Thermal Protective Fabric</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/talukdar-prabal" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/talukdar-prabal" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rao, P.V.M.</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Product Design & Realization, Computer Aided Design & Manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/rao-pvm" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/rao-pvm" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Suresh Anand</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Operations research, Manufacturing and marketing operations, Strategic decision making specifically for automotive industry.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/suresh-anand" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/suresh-anand" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Priya Vashisth</td>
+
+
+<td>IIT Delhi</td>
+
+
+<td>MECH</td>
+
+
+<td>Smart Functional Biomaterials (drug delivery and biomedical implants), Tissue engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://mech.iitd.ac.in/content/priya-vashisth" target="_blank">Profile</a>
+
+
+<a href="https://mech.iitd.ac.in/content/priya-vashisth" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Amaresh Dalal</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Natural and Mixed Convection Flows,Electrochemical Energy Conversion and Storage,CFD,Heat Transfer,Structured Grid Techniques in Curvilinear Coordinates,Finite Volume Methods and Unstructured Grid Techniques,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128441" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=8568483500" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anil D. Sahasrabudhe</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Vibration and Noise,CAD/CAM,Condition Monitoring,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=35932841200" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anoop K. Dass</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Turbomachines,Computational Fluid Dynamics,,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4316" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=7003687240" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Arnab Kumar De</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Numerical Methods in Fluid Flow and Heat Transfer,Turbulence,Convection,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128434" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=55666317700" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Arup Nandy</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Acoustics,Optimization,Magnetohydrodynamics,Finite Element Development and Analysis in Structure,Structural acoustic interaction,Electromagnetics,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128420" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=54400134900" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Atanu Banerjee</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Complaint Mechanism,Bio-memetic devices,Shape memory alloy,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128436" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=55757780537" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Atul K. Soti</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Renewable Energy,Spectral-Element Method,Fluid-Structure Interaction,High Performance Computing,Immersed-Boundary Method,Computational Fluid Dynamics,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128448" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=56050302400" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Bhaskar Kumar</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Hydrodynamic Stability,Bluff Body Flows,Computational Fluid Dynamics,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128438" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57214152409" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Biranchi Panda</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>3D/4D Printing,Modelling and Characterization,Advanced Manufacturing and Design,Energy and Sustainable Environmental Technologies,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128419" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=54393965300" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Debabrata Chakraborty</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>FEM,Fracture Mechanics and Design,Composites,FRP COMPOSITES,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4433" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=35513613200" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Deepak Sharma</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>OPTIMIZATION AND SOFT COMPUTING TECHNIQUES FOR DESIGN AND MANUFACTURING,,,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128413" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=56003115800" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dibakar Bandopadhya</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Smart structures,Robotics and mechanism,Bio inspired design,Composites,Active materials,Artificial muscle materials,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128435" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=16318367700" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dipankar Narayan Basu</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Nuclear Thermalhydraulics,Supercritical Natural Circulation Loops,Domestic Air-conditioning,CFD,Heat Transfer,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128412" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=7101895565" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Gavara Madhusudhana</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Cooling at Micro/Mini scales,Heat Transfer,Turbulent Fluid Flow and Heat transfer,Computational Fluid Dynamics,Multi-phase flows,Cooling of Electronics,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128422" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=55226003500" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>K. S. R. Krishna Murthy</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>ERROR ESTIMATION AND FRACTURE MECHANICS,Finite Element Methods,,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128415" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=7201422214" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Karuna Kalita</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Coupled Dynamics of Electro-Mechanical Systems,Vibration,Rotordynamics,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128429" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=8637268200" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Manas Das</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Non-traditional Machining Processes,Micromanufacturing,Laser Welding,Advanced Finishing and Nano-finishing Processes,Micromachining,Tribology,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128442" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=8142607700" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Manmohan Pandey</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Nuclear Reactor Thermal-Hydraulics,Dynamics and Control of Fluid-Thermal Systems,,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4435" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=22635272100" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Nelson Muthu</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Google Scholar,ResearchGate,Meshfree Methods,Medical Device Innovation,Composites,Fracture Mechanics,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128426" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=55556298600" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Niranjan Sahoo</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Instrumentation,Fluid and Thermal Engineering,Aerodynamics,Gas Dynamics,MEASUREMENTS AND EXPERIMENTS IN FLUID,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128417" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=23980822200" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>P. Muthukumar</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Coupled heat and mass transfer analysis,Metal hydride based thermal machines,Conventional and Non-conventional refrigeration systems,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128409" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=23019480400" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>P. S. Robi</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Fracture Mechanics,Coating,Metal Casting,Metal Matrix composite,P/M Processing,Materials Processing,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4313" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=6602385627" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pankaj Biswas</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>FEM,Computational weld mechanics,Line heating,Manufacturing and Design,Soft computing modeling of welding processes,Solid state welding,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128439" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=24075241100" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pinakeswar Mahanta</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Thermal Radiation with Participating Media,Fluidization,Energy Conservation and Renewable Energy,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4439" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=24073505400" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Poonam Kumari</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Computational mechanics,Theory of plates and shells,Smart structures,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128430" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57197169164" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Pranab Kumar Mondal</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Microfluidics,Electrokinetics,Flow Through Porous Media,Two Phase Transport,Microscale Transport of Heat,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128425" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=55520323100" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prasenjit Khanikar</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Microstructural Characterization,Microstructural Materials Modeling,Micro-mechanics,Dislocation Density Based Crystal Plasticity,Aluminum Alloys,Deformation and Failure Mechanisms of Metallic Materials,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128418" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=35107305700" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>R. Ganesh Narayanan</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Material Forming and Joining,,,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128410" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57201789684" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rajiv Tiwari</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>APPLICATION OF ACTIVE MAGNETIC BEARINGS IN ROTORS,Vibration,Identification in Mechanical Systems,Rotor Dynamics,Rolling Element Bearing Design and Analysis,Vibrations based Condition Monitoring of Industrial Rotating Machines,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/29277" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=56250068300" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>S. Kanagaraj</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Biomaterials,Carbon nanotubes based nanocomposites,Nanofluids,Materials characterization,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128431" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=16021949800" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>S. Senthilvelan</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Wear and Failure Analysis,Fatigue,Composites,Gear,Science and Technology in Traditional Systems,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128411" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=9638097400" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sachin S. Gautam</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Adhesion,Machine Learning in Computational Mechanics,Isogeometric Analysis,Computational Contact Mechanics,Nonlinear Finite Element Method,Ductile Fracture,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128424" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=55508569800" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sajan Kapil</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Manufacturing Automation,CNC,Rapid Manufacturing (3D Printing),Welding/Cladding Processes,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128428" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=56178079900" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sandeep Reddy Basireddy</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Applied Dynamics,Robotics and Control,Nonlinear Dynamics of Mechanical Systems,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128437" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=7401453087" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Santosha K. Dwivedy</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Google Scholar,ResearchGate,Design and Robotics,Non-linear Dynamics,Vibration,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4432" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=6602812703" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sashindra K. Kakoty</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Rural Technology,Mechanical System Design,Tribology,Duct Acoustics,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/1624" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=56068299300" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Satyajit Panda</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>FEM,Smart materials and structures,Micromechanics,Composite materials,Nonlinear vibrations,Functionally Graded materials and structures,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128421" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=54947754100" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shrikrishna N. Joshi</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Google Scholar,Laser-based micro-machining,Thin-wall machining,Automation in Manufacturing,Single point diamond turning,Process modeling and optimization of advanced manufacturing processes,,,,</td>      
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128443" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=56680562300" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shubhadeep Mandal</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Complex Fluids,Electrohydrodynamics,Droplet Microfluidics,Microswimmers,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128432" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=57212403531" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shyamanta M. Hazarika</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Google Scholar,ResearchGate,Cognitive Systems,Knowledge Representation and Reasoning,Artificial Intelligence,Biomimetic Robotics,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128414" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=24343762400&origin=AuthorEval" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sukhomay Pal</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Welding Process Monitoring and Control,Non-Conventional Machining Process,Application of Artificial Neural Network,Tool Condition Monitoring,Genetic Algorithms and Fuzzy logic in manufacturing,,,,,</td>  
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128445" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=55423947100&origin=AuthorEval" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Swarup Bag</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Finite Element Method,Residual stress and distortion,Heat transfer and fluid flow in fusion welding,Recrystallization in hot metal forming process,Fusion welding processes,Optimization in manufacturing process,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128416" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=23011693200" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Tapan Krishnakumar Mankodi</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Rarefied Gas Dynamics,Hypersonic Aerothermodynamics,Computational Gas Dynamics,Non-equilibrium Flows,Galerkin Methods,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128433" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=57194412225" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Uday S. Dixit</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Design and Manufacturing : FEM,Mechatronics,Neural Network and Fuzzy Set Application,,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4318" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?origin=resultslist&authorId=6602090180" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ujjwal K. Saha</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>Turbomachinery,Propulsion,Wind Energy Conversion,Internal Combustion Engines,,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/4434" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=35577440500" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Vinayak Kulkarni</td>
+
+
+<td>IIT GUWHATI</td>
+
+
+<td>MECH</td>
+
+
+<td>EXPERIMENTAL AERODYNAMICS,CFD simulations,measurement science,scramjet engine,High enthalpy flows,,,,,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iitg.irins.org/profile/128427" target="_blank">Profile</a>
+
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57211250945" target="_blank">Publications</a><p></p></div></td></tr>
+
+<tr><td>Dr. Anirudha Ambekar</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Experimental combustion diagnostics, Propellant characterization, Analytic combustion, Chemical kinetics, Ageing of energetic materials, Pollution reduction and optimization of energy conversion systems, 
+Alternative fuels, and Sustainable combustion.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=58" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?hl=en&user=eNaQaZIAAAAJ" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Arindam Das</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Interfacial Science: Wettability, Adhesion, Nucleation and Heat Transfer at Interface. Nanoparticle and Colloid Synthesis, Active Nano Fluids, Biomimicry, EMI Shielding, Nanoparticle Polymer Composites, Microfluidics.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=74" target="_blank">Profile</a>
+
+
+<a href="https://goo.gl/vXwVKG" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ashish Bhateja</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Mechanics of granular materials; Computational mechanics; Discrete and continuum modeling of granular media; Discrete Element Method (DEM); Gas-solid flows; Appropriate technology.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=60" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?user=M1AprlQAAAAJ&hl=en&oi=ao" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. B K Mishra</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Particulate Materials, Discrete element methods (DEM), Appropriate Technology</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=9" target="_blank">Profile</a>
+
+
+<a href="https://www.iitgoa.ac.in/faculty_page.php?id=9" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Harpreet Singh</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Mechanics, Impact Mechanics, Multiscale Modeling of Heterogenous Materials, Geometric Modeling of Thin Materials</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=105" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.com/citations?user=QCZEJT8AAAAJ&hl=en" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ponnulakshmi VK</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Radiative heat transfer, High Reynolds number flows, Atmospheric Science, Bio-fluid dynamics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=53" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?user=C5g1togAAAAJ&hl=en" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Rajesh S. Prabhu Gaonkar</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fuzzy Set Applications in Reliability Engineering, Fuzzy Set Applications in Maintenance Engineering, Transportation Models and its Variants, Multi-Attribute Decision Making.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=57" target="_blank">Profile</a>
+
+
+<a href="https://www.iitgoa.ac.in/faculty_page.php?id=57" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Rudra Narayan Roy</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Turbulent reacting flows, modelling of turbulent combustion, conditional moment closure model, flamelet models, direct numerical simulation</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=59" target="_blank">Profile</a>
+
+
+<a href="https://www.iitgoa.ac.in/faculty_page.php?id=59" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Sachin Dnyandeo Kore</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Electromagnetic Manufacturing and Advanced Welding Processes</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=61" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?user=DV2rWTIAAAAJ" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sandip Haldar</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Composite Materials, Experimental Mechanics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=106" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?user=_y7AvV8AAAAJ&hl=en" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sreenath Balakrishnan</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Mechanical modelling of biological cells, Biomechanics, Design and fabrication of micro-compliant-mechanisms, and Inverse problems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=104" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?hl=en&user=DBQn4EMAAAAJ" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sudhakar Yogaraj</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational mechanics, Fluid-structure interaction, Bio-inspired fluid dynamics, and Passive flow control</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=54" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?user=vlG2Y8kAAAAJ&hl=en" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Thaseem Thajudeen</td>
+
+
+<td>IIT GOA</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Characterization of aerosol and colloidal nanoparticles, Brownian dynamics based modeling of analytical ultracentrifugation, Electrical mobility based characterization of nanoparticles, Population balance modeling, Monte Carlo methods.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitgoa.ac.in/faculty_page.php?id=62" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?user=QFfMCHEAAAAJ&hl=en" target="_blank">Publications</a><p></p></div></td></tr>
+
+<tr><td>Prof. Amit Agrawal</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Turbulence, PIV, Heat Transfer, Rarefied Gas Flows, Microfluidics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amit%20Agrawal%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amit%20Agrawal%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Alankar Alankar</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Multiscale Computational Mechanics of Materials, Crystal Plasticity, Artificial Intelligence and...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Alankar%20Alankar%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Alankar%20Alankar%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Milind Atrey</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Refrigeration,Cryogenic Engineering,Cryocoolers, Cryogenic Heat Exchangers, Two phase flow heat...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Milind%20Atrey%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Milind%20Atrey%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. B. Ravi</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Metal casting simulation,Â Medical device innovation,Â Smart manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20B.%20Ravi%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20B.%20Ravi%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Sridhar Balasubramanian</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>PIV, Flow and turbulence measurement using optical means., Experimental fluid dynamics and heat...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sridhar%20Balasubramanian%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sridhar%20Balasubramanian%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Dipanshu Bansal</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Vibrational spectroscopy, Nuclear materials, Nano-scale heat transfer, Phase transitions (...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Dipanshu%20Bansal%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Dipanshu%20Bansal%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Tanmay K. Bhandakkar</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Elasticity, Analytical and numerical methods, Contact Mechanics, Fracture mechanics,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Tanmay%20K.%20Bhandakkar%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Tanmay%20K.%20Bhandakkar%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. U. V. Bhandarkar</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Particulate Characterization and Emission Control, Heat transfer in nanofluids, Molecular...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20U.%20V.%20Bhandarkar%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20U.%20V.%20Bhandarkar%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Avinash Bhardwaj</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Conic (mixed) integer programming, Linear and Non Linear Discrete Optimization, Polyhedral...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Avinash%20Bhardwaj%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Avinash%20Bhardwaj%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Rajneesh Bhardwaj</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Droplets, Interfaces, Fluid Structure Interaction, CFD</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Rajneesh%20Bhardwaj%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Rajneesh%20Bhardwaj%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Abhilash J.Chandy</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>TFE, Turbulence, Computational Fluid Dynamics, LES/DNS for complex transitional and turbulent...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Abhilash%20J.Chandy%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Abhilash%20J.Chandy%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Arindrajit Chowdhury</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Combustion Visualization and Optical Diagnostics, Combustion of Energetic Materials (Propellants...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Arindrajit%20Chowdhury%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Arindrajit%20Chowdhury%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Prashant P. Date</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Metal Forming Processes, Formability, Shopfloor Metallic waste processing, Powder Metallurgy,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Prashant%20P.%20Date%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Prashant%20P.%20Date%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Amitava De</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Joining, Additive Manufacturing, Numerical Modeling,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amitava%20De%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amitava%20De%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Pradeep Dixit</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>MEMS, Microfabrication, Microsystems Packaging, 3D Interconnections, Non-conventional Machining...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Pradeep%20Dixit%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Pradeep%20Dixit%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Uday N. Gaitonde</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Thermodynamics, Energy Conversion,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Uday%20N.%20Gaitonde%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Uday%20N.%20Gaitonde%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. P. S. Gandhi</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Robotics, Mechatronics, multi-scale manufacturing using fluid instabilities, 3D Microprinting,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20P.%20S.%20Gandhi%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20P.%20S.%20Gandhi%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Amol A.</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Shock- Material Interactions, Metal Foams, High temperature materials, Fatigue and Fracture in...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amol%20A.%20%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amol%20A.%20%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Shivasubramanian Gopalakrishnan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fluid Mechanics, Numerical Methods, Computational Fluid Dynamics, Geophysical Fluid Dynamics,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shivasubramanian%20Gopalakrishnan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shivasubramanian%20Gopalakrishnan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Anirban Guha</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Modeling of human locomotion : Gait detection : Design of assistive devices, Design of machines...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Anirban%20Guha%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Anirban%20Guha%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Abhishek Gupta</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Robotics and controls,Â Human-robot interaction, Assistive devices for rehabilitation.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Abhishek%20Gupta%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Abhishek%20Gupta%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Kannan Iyer</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal and Fluid Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Kannan%20Iyer%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Kannan%20Iyer%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Ankit Jain</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Designing next-generation materials for energy applications.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Ankit%20Jain%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Ankit%20Jain%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Krishna Jonnalagadda</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Microfabrication, Multifunctional Coatings, Experimental Mechanics, Fracture Mechanics, Dynamic...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Krishna%20Jonnalagadda" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Krishna%20Jonnalagadda" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. S. S. Joshi</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Ultra precision machining (UPM) processes, Modeling and machining of 'difficult to machine'...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20S.%20S.%20Joshi%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20S.%20S.%20Joshi%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Shyamprasad Karagadde</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational and Data methods,
+Solidification, Microstructures, Transport phenomena...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shyamprasad%20Karagadde%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shyamprasad%20Karagadde%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. V. Kartik</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Dynamics, vibrations and control, Nano- and micro-scale devices, Electric and Hybrid Electric...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20V.%20Kartik" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20V.%20Kartik" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. K. P. Karunakaran</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Rapid Manufacturing, CNC Technology & Automation, Computer Graphics for CAM Applications,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20K.%20P.%20Karunakaran%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20K.%20P.%20Karunakaran%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Shankar Krishnan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Thermal Management of Electronics, Non-traditional Thermal Desalination</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shankar%20Krishnan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shankar%20Krishnan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Makarand. Shrikrishna. Kulkarni</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Reliability Engineering, Maintenance Planning, Quality Engineering, Digital Twins for Industry 4...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Makarand.%20Shrikrishna.%20Kulkarni%20" target="_blank">Profile</a>        
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Makarand.%20Shrikrishna.%20Kulkarni%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Salil S. Kulkarni</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Mechanics, Applied Mechanics, Finite Element Method, Boundary Element Method, Wave...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Salil%20S.%20Kulkarni%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Salil%20S.%20Kulkarni%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Neeraj Kumbhakarna</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>TFE, Combustion Visualization and Optical Diagnostics, Computational fluid dynamics and heat...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Neeraj%20Kumbhakarna%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Neeraj%20Kumbhakarna%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Dhanesh N. Manik</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Design Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Dhanesh%20N.%20Manik%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Dhanesh%20N.%20Manik%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Deepak Marla</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Laser Materials Processing, Ultra-short Pulsed Laser Ablation, Electrochemical Machining,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Deepak%20Marla%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Deepak%20Marla%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Sushil Mishra</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Metal-forming, Microstrure, Materials Model, Â Fatigue & Fracture, Residual stress, Thermo-...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sushil%20Mishra%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sushil%20Mishra%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Rakesh G. Mote</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Focused Ion Beam (FIB) and Laser based micro/nano-fabrication, Plasmonics for sensing and beam...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Rakesh%20G.%20Mote%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Rakesh%20G.%20Mote%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Soham Mujumdar</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Micro/nano manufacturing, Modeling of manufacturing processes, Electrical discharge machining (...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Soham%20Mujumdar%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Soham%20Mujumdar%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Janani Srree Murallidharan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Computational Fluid Dynamics, Experimental fluid dynamics and heat transfer, Flow...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Janani%20Srree%20Murallidharan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Janani%20Srree%20Murallidharan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. S. S. Pande</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>CAD/CAM, AIÂ  applications (ANN, GA, ML),Â Algorithms for CNC machining , Additive Manufacturing,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20S.%20S.%20Pande%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20S.%20S.%20Pande%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Dnyanesh Pawaskar</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Solid mechanics, nonlinear dynamics, engineering optimization</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Dnyanesh%20Pawaskar" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Dnyanesh%20Pawaskar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. S. V. Prabhu</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fluid Mechanics, Heat Transfer, Flowmetering, Hydrokinetic turbines and wind turbines, Impinging...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20S.%20V.%20Prabhu" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20S.%20V.%20Prabhu" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Bhalchandra Puranik</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Compressible Fluid Dynamics and Shock Waves, High-Knudsen NumberÂ High-Speed Internal and...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Bhalchandra%20Puranik%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Bhalchandra%20Puranik%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. R. Ganesh</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Metamaterials, Waves and Vibrations, Applied Mechanics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20R.%20Ganesh%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20R.%20Ganesh%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Sripriya Ramamoorthy</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Acoustics, Vibrations, Hearing, Porous materials, Multi-functional materials</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sripriya%20Ramamoorthy%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sripriya%20Ramamoorthy%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof M V Rane</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Energy Conservation, HVAC&R and Alternate Energy Resouces</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof%20M%20V%20Rane%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof%20M%20V%20Rane%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Avishek Ranjan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Magnetohydrodynamics (MHD) - engineering and geophysical applications (e.g. liquid metal battery...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Avishek%20Ranjan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Avishek%20Ranjan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Sandip Kumar Saha</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Computational Fluid Dynamics, Renewable energy and energy storage, Multiphase...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sandip%20Kumar%20Saha%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sandip%20Kumar%20Saha%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Vivek Sangwan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Robotics, Mechatronics, Dynamics, Control</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Vivek%20Sangwan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Vivek%20Sangwan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. P. Seshu</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Finite element modeling, Computational Solid Mechanics,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20P.%20Seshu%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20P.%20Seshu%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Darshan S. Shah</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Biomechanics, Orthopaedics, Musculoskeletal system,Â In-vitroÂ testing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Darshan%20S.%20Shah%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Darshan%20S.%20Shah%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Atul Sharma</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Fluid Dynamics, Multi-Phase Flow and Heat Transfer, and Fluid Structure...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Atul%20Sharma%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Atul%20Sharma%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Sreedhara Sheshadri (Head of the Department)</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Fluid Dynamics, Turbulent Combustion, Engine Combustion, LES/DNS of complex...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sreedhara%20Sheshadri%20%28Head%20of%20the%20Department%29%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Sreedhara%20Sheshadri%20%28Head%20of%20the%20Department%29%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Amber Shrivastava</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Solid State Joining, Additive Manufacturing, Sustainable Manufacturing, Friction Stir Welding,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amber%20Shrivastava%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amber%20Shrivastava%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Amit Singh</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Continuum Mechanics, Multiscale methods, Statistical Mechanics, Biomechanics, Heat conduction,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amit%20Singh%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Amit%20Singh%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Ramesh Singh</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>High-speed micromachining, Flexible reconfigurable fiber laser based materials processing, Novel...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Ramesh%20Singh%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Ramesh%20Singh%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Arunkumar Sridharan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Experimental fluid dynamics and heat transfer, Two phase flow and heat transfer,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Arunkumar%20Sridharan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Arunkumar%20Sridharan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Atul Srivastava</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat and Mass Transfer, Two phase flows, Bioheat transfer, Optical techniques for whole field...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Atul%20Srivastava%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Atul%20Srivastava%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Shashikanth Suryanarayan</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Control Systems Design, Mechatronics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shashikanth%20Suryanarayan%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shashikanth%20Suryanarayan%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Parag U. Tandaiya</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fracture mechanics, Finite element modeling, Computational Solid Mechanics, Mechanical Behaviour...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Parag%20U.%20Tandaiya%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Parag%20U.%20Tandaiya%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Asim Tewari</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Internet of Things - Product Development, Smart Manufacturing, "Big Data" in Manufacturing,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Asim%20Tewari%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Asim%20Tewari%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Shantanu Tripathi</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Sensing, learning and intelligence, Mechanical & Environmental Reliability of Electronics,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shantanu%20Tripathi%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Shantanu%20Tripathi%20" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Rajendra P. Vedula</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal and Fluid Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Rajendra%20P.%20Vedula" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Rajendra%20P.%20Vedula" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Nitesh P. Yelve</td>
+
+
+<td>IIT MUMBAI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Mechanical vibration, Composite materials, Structural health monitoring using ultrasonicÂ waves,...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Nitesh%20P.%20Yelve%20" target="_blank">Profile</a>
+
+
+<a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Nitesh%20P.%20Yelve%20" target="_blank">Publications</a><p></p></div></td></tr>
+
+<tr><td>Dr. Anil Kumar Emadabathuni</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>     
+
+           Areas of Interest : Hydrogen Storage, Thermal Energy Storage,Adsorption Heating and Cooling Systems 
+       
+   </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-anil-kumar-emadabathuni" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-anil-kumar-emadabathuni" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. N.N.Kishore</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>
+           Areas of Interest : Composite Materials,FEM and Non-Destructive Testing.
+
+    </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-n-n-kishore" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-n-n-kishore" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Mamilla Ravi Sankar</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>
+           Areas of Interest : Advanced Materials and Manufacturing, Ultra Precision Machining
+
+     </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-mamilla-ravi-sankar" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-mamilla-ravi-sankar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. N.Venkaiah</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>           Areas of Interest : Computational Metrology, Machining, Optimization Techniques.
+  </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-n-venkaiah" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-n-venkaiah" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ajay Kumar</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>                  Areas of Interest : Metal Casting, Metal Forming, Materials Processing and Mechanical Behavior of Materials, Tribology
+
+
+</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-ajay-kumar" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-ajay-kumar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Anup Basak</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Areas of Interest : Solid Mechanics, Computational Mechanics
+     </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-anup-basak" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-anup-basak" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Balaji Subramanian</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>           Areas of Interest : Wind energy, Experimental fluid mechanics/aerodynamics.
+
+          </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-balaji-subramanian" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-balaji-subramanian" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Degala Venkata Kiran</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>
+
+           Areas of Interest : Welding science and technology
+
+       </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-degala-venkata-kiran" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-degala-venkata-kiran" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Girish Kumar Rajan</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>
+
+           Areas of Interest : Fluid Mechanics and Applied Mathematics
+
+          </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-girish-kumar-rajan" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-girish-kumar-rajan" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sriram Sundar</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>
+           Areas of Interest : Vibrations, Contact mechanics, Gear and brake dynamics.
+
+
+    </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-sriram-sundar" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-sriram-sundar" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Subbareddy Daggumati</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>             Areas of Interest : Advanced Fibre Reinforced Composite Materials, Computational Solid Mechanics
+
+
+
+
+
+     </td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-subbareddy-daggumati" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-subbareddy-daggumati" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. P. Venkataraman</td>
+
+
+<td>IIT TIRUPATI</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>
+           Areas of Interest : Hydraulic fracturing, Multiscale modeling.
+</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://iittp.ac.in/dr-p-venkataraman" target="_blank">Profile</a>
+
+
+<a href="https://iittp.ac.in/dr-p-venkataraman" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Amrita Puri</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Active noise control; Active vibration control; Experimental modal analysis; Acoustics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~amritapuri" target="_blank">Profile</a>
+
+
+<a href="https://apontheway.wixsite.com/amrita/publications-1" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Anand Krishnan Plappally</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Water, Water Management and Characterization of Engineered Materials</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~anandk" target="_blank">Profile</a>
+
+
+<a href="https://sites.google.com/a/iitj.ac.in/plappally/publications?authuser=0" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ankur Gupta</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Microsystems Fabrication</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~ankurgupta" target="_blank">Profile</a>
+
+
+<a href="https://sites.google.com/view/ankurguptaiit/publications?authuser=0" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Arun Kumar R</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Experimental Aerodynamics - Confined Jets, Shock Wave Reflection and Transitions, Ejector Flows.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~arunkr" target="_blank">Profile</a>
+
+
+<a href="https://sites.google.com/iitj.ac.in/arun/publications?authuser=0" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Ashish Pathak</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fluid-Structure Interaction; Ocean Energy; Phase-Change Problems; Multiphase flows; High Performance Computing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~apathak" target="_blank">Profile</a>
+
+
+<a href="https://iitj.irins.org/profile/216196#other_information_panel" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Atul Kumar Sharma</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Solid Mechanics; Continuum Mechanics;  Computational Solid Mechanics; Mechanics of Soft Active Materials; Wave Propagation in Soft Active Composite Materials; Topology Optimization</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~atulksharma" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~atulksharma" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>B. Ravindra</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Design, Dynamics, Vibration and Control</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~ravib" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~ravib" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Barun Pratiher</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Dynamics of Machines and Structures, Flexible Robots, MEMS, Rotor Dynamics, Nonlinear Oscillations</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~barun" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~barun" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>C. Venkatesan</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Helicopter Dynamics and Aeroelasticity, Design of Autonomous Mini Helicopters, and Smart Structure Analysis</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~cven" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~cven" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Chandan Pandey</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Welding, Heat treatment, Nuclear grade material, Mechanical behavior of materials, Material processing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~jscpandey" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~jscpandey" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Hardik Kothadia</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Multiphase Flow, Boiling and Condensation, Heat Transfer, Fluid Mechanics, Gasification</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~hardikkothadia" target="_blank">Profile</a>
+
+
+<a href="https://hardikkothadia.wixsite.com/mysite/publications" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Jayant Kumar Mohanta</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Planar Parallel manipulators; Lower limb rehabilitation robots; Medical robotics; Robot manipulator kinematic and dynamic control, Mechanism design and Analysis</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~jayant" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~jayant" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Kaushal A. Desai</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>CAD/CAM, CNC Machine Tools, Smart Manufacturing, and Product Design and Development</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~kadesai" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~kadesai" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Nipun Arora</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Flapping wing aerodynamics; Fluid-structure interaction; CFD with Lattice Boltzmann method; Turbulence and moving boundary simulations; High performance computing; Electrorheological Fluids.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~nipun" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~nipun" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Rahul Chhibber</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Welding and joining, Manufacturing and materials processing, Mechanical behaviour of materials</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~rahul_chhibber" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~rahul_chhibber" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shobhana Singh</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal energy systems: Thermal energy storage, Solar dryers, Heat pumps, Heat exchangers; Heat and mass transfer analysis; Dynamic and multiphysics modeling; Computational fluid dynamic modeling; System 
+and design optimization; Renewable energy integration; Electrochemical carbon capture.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~shobhana" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~shobhana" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Shrutidhara Sarma</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thin film nanocomposite temperature sensors, nanocomposite materials, flexible sensors</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~shrutidhara" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~shrutidhara" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Sudipto Mukhopadhyay</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Energy Technology, Combustion Technology, Computational Fluid Dynamics, Turbulent flows, Sprays</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~smukhopadhyay" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~smukhopadhyay" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Suril Shah</td>
+
+
+<td>IIT JODHPUR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Robotics, Multibody Dynamics and Control</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://home.iitj.ac.in/~surilshah" target="_blank">Profile</a>
+
+
+<a href="http://home.iitj.ac.in/~surilshah/publications.php" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Virendra Pratap Singh</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Solid Mechanics/ Vibration</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/vpsinghmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/vpsinghmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Anil Kumar Agrawal</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Quality Control, Six Sigma, Optimization, Industrial Engineering, Operation Management, Supply Chain Management</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/akagrawalmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/akagrawalmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Vijay Kumar Srivastavav</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Machine Design (Polymer Fibre Composites, Metal-Matrix Composites, Ceramic Fibre Composites, Biocomposites and NanoComposites).</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/vksrivastavamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/vksrivastavamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Santosh Kumarsantosh</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Metal Forming,CAD-CAM-Additive manufacturing & Manufacturing Automation,Machine tools & Unconventional Manufacturing, Integrated Product Design & Development</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/santoshkumarmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/santoshkumarmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Arakere Puttaswamy Harsha</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Tribology of Materials, Bio-Tribology, Machine Design</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/apharshamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/apharshamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sandeep Kumar</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Mechanics(Wavelets, FEM, Meshless)</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/sandeepmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/sandeepmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Kripa Sanker Tripathi</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Mechanisms, Vibrations</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/kstripathimec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/kstripathimec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sanjay Kumar Sinha</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Production</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/sksinhamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/sksinhamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Rajesh Kumar</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Engine Tribology, Surface Contact Modelling, Surface Contact Temperature, Surface Characterization, Running-in, Scuffing, Wear Modelling, Tribochemistry, Probabilistic Machine Design, Optimization, DOE, MEMS</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/rkumarmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/rkumarmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Prashant Shukla</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal and Fluid Sciences</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/pshuklamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/pshuklamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Pradyumna Ghosh</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, CFD, Nanofluids, Porous media flow &  Microgravity fluid physics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/pghoshmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/pghoshmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Shailendra K. Shukla</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal Engineering, Energy Engineering, Alternate Fuels and Renewable Energy</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/skshuklamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/skshuklamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Rajnesh Tyagi</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Materials Development, Tribology, Composite Materials, High Temperature Wear and Self Lubrication, Surface Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/rtyagimec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/rtyagimec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Saroja Kanta Pandas</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fracture mechanics, Failure and bursting of pipe and boiler, Graphite and graphene, Laminated composite, Finite element analysis, Impact dynamics and ballistics, Bearings, Bio-mechanics, Cardiovascular stent design,</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/skpandamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/skpandamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sharadendu Kumar Shahs</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Production Engg.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/skshahmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/skshahmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Prabhash Bhardwa</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Desgn of Production Systems, Operations Management Supply Chain Management</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/pbhardwajmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/pbhardwajmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Mohd Zaheer Khan Yusufzai</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Welding Processes, Welding Metallurgy, Friction Stir Welding, Inspection and Testing of Welds, Materials Engineering, New Manufacturing Processes.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/mzkhanmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/mzkhanmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Meghanshu Vashista</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Machining, Grinding, Welding, Material characterization</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/mvashistamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/mvashistamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Swasti Sundar Mandal</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal Engg.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/ssmondalmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/ssmondalmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Jahar Sarkar</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Thermodynamics, Refrigeration, Heat pump, Air-conditioning, Nanofluids, Passive cooling</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/jsarkarmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/jsarkarmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Arnab Sarkar</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Wind Climate Modeling, Renewable Energy, Alternative Cycles, Microfluidics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/arnabmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/arnabmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Debashis Khan</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Solid Mechanics, Fracture Mechanics, Continuum Mechanics, Finite Deformation Plasticity, Finite Element Method.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/dkhanmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/dkhanmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Rakesh K. Gautam</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Hybrid Cu-base in-situ composite, processing of Light alloy base composites and nano- composite, Microwave sintered composite, Tribological, Mechanical and physical properties of cast in-situ composites, 
+Bio -Tribology, dental tribology and Air jet erosion,Self - Healing and Biomematics Materials</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/rkgmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/rkgmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Om Prakash Singh</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Fluid Dynamics (CFD), Design and Innovation, Double-diffusive convection, Solar Energy, Renewable Energy, Solar thermal energy storage systems, Solar air/water heating system, Green buildings, Intellectural Property Rights (IPR)</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/opsinghmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/opsinghmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Jeevan Vachan Tirkey</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Renewable Energy: LCA, Internal combustion engine (SI and CI):Experiment, Simulation & Optimization , Alternate fuel : (Bioethanol, Biodiesel and producer gas), Over expanded Engine, Aspen plus</td>      
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/jvtirkeymec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/jvtirkeymec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Cherian Samuel</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Supply chain management, Production & Operations Management, System Dynamics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/csamuelmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/csamuelmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Nilanjan Mallik</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Smart Materials and Structures including Nanostructures, Mechatronics, Dynamics & Control, FEM, Composites, Vibration Damping, Energy Harvesting Technologies, Micromechanics, Piezoelectrics including non-linear behavior, Structural Health Monitoring, Optical Fiber Sensing, Shape Memory Alloys, ER/MR</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/nmallikmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/nmallikmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Amit Tyagi</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Machine Design, Vibration, Engineering Mechanics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/atyagimec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/atyagimec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Uppu Srinivas Raosr</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Modeling and Simulation, Micro-machining, Machining</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/sruppumec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/sruppumec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Rashmi Rekha Sahoo</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>IC Engine, Automobile Engineering, Combustion Technology,Advance Thermodynamics,Alternate fuels, Automotive Cooling systems,nanofluid & hybrid nanofluid applications</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/rrsahoomec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/rrsahoomec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Laltu Chandra</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer and Fluid Flow; Computation and Experiment; Turbulent Flow Simulation and Modelling; Solar Thermal Sub-system Design; Nuclear Reactor Thermal Hydarulics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/chandramec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/chandramec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Prakash Chandra </td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Tribology and Maintenance Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/pcmanimec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/pcmanimec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Amitesh Kumar</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>CFD, Turbulence Modelling, High Mach Number Flows, Cryosurgery, Heat Transfer and Fluid Flow</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/amiteshmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/amiteshmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ajinkya N. Tanksale</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Applied Operations Research, Operations and Supply Chain Management, Location Science.</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/ajinkyamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/ajinkyamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Anubhav Sinha</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Hydrogen Safety,  Gas Turbine Combustion,  Atomization and Spray, Computational Fluid Dynamics (CFD), More details are given here: https://eranubhav.wixsite.com/research</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/anubhavmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/anubhavmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Binita Pathakbinita</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>multiphase flow (polymers, nano particle laden flows), droplet atomisation, microfluidics, biofluid dynamics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/binitamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/binitamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Amit Subhash Shedbale</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Damage Mechanics, Fracture, Computational Modeling</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/amitmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/amitmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Saurabh Pratap</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Supply Chain Network design and Modeling, Operations Research Applications in Production, Transport, and Logistics Systems, Agriculture 4.0</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/saurabhmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/saurabhmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Joy Prakash Misrajpmisra</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Machining Science, Advanced & Hybrid Machining Processes, Advanced Joining Techniques</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/jpmisramec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/jpmisramec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Akhilendra Pratap Singhakhilendra</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Advanced  low temperature combustion; Optical diagnostics with special reference to engine endoscopy and PIV; Combustion diagnostics; Engine emission measurement; Particulate characterization and their control; Alternative fuels</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/akhilendramec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/akhilendramec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Lakshay</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Operations Research, Mathematical modeling and Simulation</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/lakshaymec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/lakshaymec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Poonam Sundriyal</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Additive Manufacturing, Printing,  Batteries and Supercapacitors, Advanced Manufacturing, Surface Engineering, Flexible and Wearable Electronics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/poonammec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/poonammec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Srihari Dodlasdodla</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Multiscale material modelling of polycrystalline materials, Homogenization, Micromechanical formulation, Texture evolution, Machining</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/sdodlamec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/sdodlamec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. R Santhosh</td>
+
+
+<td>IIT BHU</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Combustion, Laser diagnostics, CFD, Atomization and Sprays</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://www.iitbhu.ac.in/dept/mec/people/rsanthoshmec" target="_blank">Profile</a>
+
+
+<a href="https://www.iitbhu.ac.in/dept/mec/people/rsanthoshmec" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Anirban Bhattacharya</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>1. Solidification and microstructure modelling. 2. Additive manufacturing. 3. Energy storage ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/anirban/" target="_blank">Profile</a>  
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/anirban/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Arun Kumar Pradhan</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Composite Materials & Structures, Smart Materials & Structures, Solid Mechanics, Fracture Mechanics ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/akpradhan/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/akpradhan/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Chetan</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Sustainable Machining; Micro-Machining; Surface Engineering; Tribology in Manufacturing; Surface ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/chetan/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/chetan/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Gaurav Bartarya</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Conventional Machining of hard material, Modeling and simulation of Machining processes, Computer ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/bartarya/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/bartarya/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Manas Mohan Mahapatra</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Welding Residual Stress & Distortion control, Friction Stir Welding Tool Design, Friction Stir ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/MMMahapatra/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/MMMahapatra/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Mihir Kumar Das</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Heat Transfer, Refrigeration & Air Conditioning,   Solar   Energy And I. C. Engines ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/mihirdas/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/mihirdas/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Mihir Kumar Pandit</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Design and Solid Mechanics, Composite Materials, Sandwich Structures, Finite Element Analysis, ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/mihir/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/mihir/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Pattabhi Ramaiah Budarapu</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Multiscale methods for fracture; molecular dynamics;  fracture in multiphysics problems; structural ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pattabhi/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/pattabhi/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Prasenjit Rath</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Numerical Transport Phenomena
+Ultra Fast   Radiation Heat Transfer
+CFD/HT</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/prath/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/prath/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sasidhar Kondaraju</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Microfluidics; Surface wettability; Interfacial Science; Micro/Nanoscale Heat and Fluid Transport; ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sasidhar/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/sasidhar/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Satish Dhandole</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Dynamic Design, Vibro-Acoustic, Experimental Modal Analysis, Mechanism Design ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sddhandole/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/sddhandole/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Satyanarayan Panigrahi</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Technical Acoustics, Industrial Noise Control, Automotive noise   control, Acoustic based Condition ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/psatyan/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/psatyan/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Soham Roychowdhury</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Computational Solid Mechanics; Mechanics of Inflatable Structures; Nonlinear Elasticity ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/soham-roychowdhury/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/soham-roychowdhury/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Srinivasa Ramanujam Kannan</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal Radiation, Inverse problems in heat transfer, Stochastic optimization, Algorithms, ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/sramanujam/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/sramanujam/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Suvradip Mullick</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Laser material processing, Non-conventional machining</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/suvradip/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/suvradip/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Prof. Swarup Kumar Mahapatra</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Thermal Radiation Modelling; Â Conjugate Heat and Mass Transfer; Â Bio-Heat Transfer; Â Complex ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/swarup/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/swarup/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. V. Pandu Ranga</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Robotics, Manufacturing, Soft Computing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/pandu/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/pandu/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Venugopal Arumuru</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>Fluid Structure Interaction and unsteady Aero- Hydrodynamics, Turbulence and Flow control, ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/venugopal/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/venugopal/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Yogesh G. Bhumkar</td>
+
+
+<td>IIT BHUBANESWAR</td>
+
+
+<td>MECHANICAL</td>
+
+
+<td>High Accuracy, High-Performance Computing; Computational Aeroacoustics; DNS and LES ...</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://www.iitbbs.ac.in/profile.php/bhumkar/" target="_blank">Profile</a>
+
+
+<a href="http://www.iitbbs.ac.in/profile.php/bhumkar/" target="_blank">Publications</a><p></p></div></td></tr>
+
+<tr><td></td>
+
+
+<td></td>
+
+
+<td></td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Neelesh Kumar Jain</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Additive Manufacturing of High Melting Point Materials,
+Surface Modification and Joining of Thin Sheets by Âµ-PTA Process
+High Quality Gear Finishing by Advanced ECH, PECH, AFF
+Sustainable and Green Manufacturing of Gears
+Near Net-shape Manufacturing of Meso-sized Gears
+Advanced and Hybrid Machining Processes,
+ Micromachining and Nano-finishing Processes
+Process Selection, Modeling and Optimization of the Manufacturing Processes</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~nkjain/" target="_blank">Profile</a>
+
+
+<a href="http://iiti.ac.in/people/~nkjain/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Anand Parey</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Condition monitoring
+Noise and vibration isolation
+Signal Processing of Mechanical Systems</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-anand-parey/" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Bhupesh Kumar Lad</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Reliability Engineering
+Assessment Management
+Prognostics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://bklad.webs.com/" target="_blank">Profile</a>
+
+
+<a href="http://bklad.webs.com/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Devendra Deshmukh</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Internal combustion engines
+Biofuels
+Spray and combustion diagnostics</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-devendra-deshmukh/" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. I. A. Palani </td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Optical instrumentation
+Mechatronics System Design
+Laser assisted synthesis and characterization of Nano structures for functional devices</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-i-a-palani/" target="_blank">Profile</a>
+
+
+<a href="http://drpalaniia.webs.com/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Kazi Sabiruddin</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Surface Engineering, Manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-kazi-sabiruddin/" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ritunesh Kumar</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Desiccant Cooling Systems
+Renewable Energy
+Heat Transfer</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/?page_id=114&preview=true" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Santosh K. Sahu</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Thermal Engineering
+Thermal hydraulics
+Multi phase flows</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/?page_id=254&preview=true" target="_blank">Profile</a>
+
+
+<a href="http://people.iiti.ac.in/~santosh/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Satyajit Chatterjee</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Surface Technology
+Coatings Tribology
+Solid Lubrication</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-satyajit-chatterjee/" target="_blank">Profile</a>        
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Shanmugam Dhinakaran</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Bluff body flows
+Heat transfer in porous media
+Nanofluids</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-shanmugam-dhinakaran/" target="_blank">Profile</a>       
+
+
+<a href="http://people.iiti.ac.in/~sdhina" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Shailesh I. Kundalwal</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Computational Nanomechanics of Solids
+Finite Element Analysis of Composites
+Nanomechanics & Micromechanics of Composites
+Nanotechnology in Engineering
+Smart Materials and Structures</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-shailesh-i-kundalwal/" target="_blank">Profile</a>       
+
+
+<a href="http://www.sikundalwal.com/" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Indrasen Singh </td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Computational solid mechanics
+Metallic glass, Nanoglass
+Frature mechanics
+Mechanical behaviour of materials
+Finite element methods</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-indrasen-singh/" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Yuvraj Kumar Madhukar</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Laser Material Processing
+Water Assisted Laser Processing
+Additive Manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-yuvraj-kumar-madhukar/" target="_blank">Profile</a>      
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Pavan Kumar Kankar</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Fault Diagnosis of Mechanical Components
+Condition Based Maintenance
+Machine Learning
+Signal Processing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-pavan-kumar-kankar/" target="_blank">Profile</a>
+
+
+<a href="https://scholar.google.co.in/citations?hl=en&user=eN63O5AAAAAJ" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Girish Chandra Verma</td>
+
+
+<td></td>
+
+
+<td>Mechanical</td>
+
+
+<td>Machining processes,
+Abrasive based finishing process,
+Ultrasonic-assisted machining process and Additive manufacturing</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-girish-chandra-verma-2/" target="_blank">Profile</a>     
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Harekrishna Yadav</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Experimental Fluid Dynamics and Heat Transfer, Fluid Structure Interaction, Shear Flow, Flow and Turbulence Measurement using Optical Techniques, Heat Transfer Enhancement, Renewable and Sustainable Energy</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-harekrishna-yadav-2/" target="_blank">Profile</a>        
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Satyanarayan Patel</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Energy conversion, storage and harvesting materials
+Solid State Refrigeration
+Piezoelectric, Pyroelectric and ferroelectric materials
+Energy Engineering</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://sites.google.com/view/satyanarayan-patel/home?authuser=0" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Dan Sathiaraj</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Medium to High entropy alloys
+Severe plastic deformation (SPD), Recrystallization and grain growth study
+Micro, Nano- machining of MEAs and HEAs
+Surface modification Engineering (SMAT, Laser Shot-peening, etc)
+Mechanical and functional property study</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://sites.google.com/view/drdansathiaraj" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ankur Miglani</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Combustion of next-generation fuels: Gel fuels and nanoparticle laden fuels
+Thermal management of power-dense electronics:  Flow boiling in microchannels
+Microfluidics:  Flow freezing in microchannels
+Soft-matter: Instabilities in drying colloidal droplets</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://scholar.google.co.in/citations?user=6ABZdEoAAAAJ&hl=en" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Ashish Rajak</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>High strain rate material processing, electromagnetic: forming, welding, crimping, cladding, hemming, powder compaction, explosive welding, vaporizing foil actuator</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="https://scholar.google.com/citations?user=eHnsIccAAAAJ&hl=en&oi=ao" target="_blank">Profile</a>        
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Krishna Mohan Kumar</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Acoustics of Ducts and Mufflers;
+Industrial Noise and Vibration Control;
+Automotive Noise Control; and Designing for Quietness;</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/dr-krishna-mohan-kumar-2/" target="_blank">Profile</a>      
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td>Dr. Sandeep Singh</td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td>Solid mechanics and design,
+Finite element method,
+Theory of plates and shells,
+Computational material science,
+Multiscale modelling of nanomaterials</td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="http://people.iiti.ac.in/~meiiti/index.php/profile/" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+<tr><td></td>
+
+
+<td>IIT Indore</td>
+
+
+<td>Mechanical</td>
+
+
+<td></td>
+
+
+<td><div class="dropdown"><button class="dropbtn">Details</button><div class="dropdown-content"><a href="" target="_blank">Profile</a>
+
+
+<a href="" target="_blank">Publications</a><p></p></div></td></tr>
+                    
+                
+
+
+            </tbody>
+        </table>
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+            </script>
+            <script>
+              function myFunction2() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput2");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                  td = tr[i].getElementsByTagName("td")[3];
+                  if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = "";
+                    } else {
+                      tr[i].style.display = "none";
+                    }
+                  }       
+                }
+              }
+              </script>
+
+
+<script>
+  function myFunction3() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput3");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  
+</script>
+        
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+				  content.style.maxHeight = null;
+				} else {
+				  content.style.maxHeight = content.scrollHeight + "px";
+				} 
+			  })
+			}
+		</script>
+			   
+</body>
+</html>
