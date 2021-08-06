@@ -2,133 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
-
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-</style>
+<link rel="stylesheet" href="/stylesheets/aboutus.css">
 </head>
 <body>
 
@@ -166,7 +40,7 @@ html {
       <div class="row">
         <div class="column">
           <div class="card">
-            <img src="/static/aditya.png" alt="Aditya" style="width:100%">
+            <img src="/images/us/aditya.png" alt="Aditya" style="width:100%">
             <div class="container">
               <h2>Aditya</h2>
               <p class="title">Back-End Devloper</p>
@@ -179,7 +53,7 @@ html {
       
         <div class="column">
           <div class="card">
-            <img src="/static/nandini.png" alt="Nanadini" style="width:100%">
+            <img src="/images/us/nandini.png" alt="Nanadini" style="width:100%">
             <div class="container">
               <h2>Nanadini Singh</h2>
               <p class="title">Front End Devloper</p>
@@ -192,7 +66,7 @@ html {
       
         <div class="column">
           <div class="card">
-            <img src="/static/ishank.png" alt="Ishank" style="width:100%">
+            <img src="/images/us/ishank.png" alt="Ishank" style="width:100%">
             <div class="container">
               <h2>Ishank Giri</h2>
               <p class="title">Designer</p>
@@ -205,7 +79,7 @@ html {
       </div>
       <div class="column">
         <div class="card">
-          <img src="/static/piyush.png" alt="piyush" style="width:100%">
+          <img src="/images/us/piyush.png" alt="piyush" style="width:100%">
           <div class="container">
             <h2>Piyush Chandra</h2>
             <p class="title">JS</p>
@@ -218,7 +92,7 @@ html {
     </div>
     <div class="column">
         <div class="card">
-          <img src="/static/monke.jpg" alt="devansh" style="width:100%">
+          <img src="/images/us/monke.jpg" alt="devansh" style="width:100%">
           <div class="container">
             <h2>Devansh Chauhan</h2>
             <p class="title">monke</p>
