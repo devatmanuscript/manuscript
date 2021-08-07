@@ -127,4 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#vs code settings
 /.vscode/settings.json
+
+#API keys
+serviceAccountKey.json
