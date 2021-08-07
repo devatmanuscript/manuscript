@@ -12,7 +12,9 @@ def add_values_in_dict(sample_dict, key, list_of_values):
 app = Flask(__name__)
 headings = ("Name","Role")
 
-
+@app.route('/research.html')
+def research():
+    return render_template('research.html')
 
 
 @app.route('/professor.html')
@@ -37,15 +39,21 @@ def menubar():
 def csestatic():
     return render_template('csestatic.html')
 
+@app.route('/eeestatic.html')
+def eeestatic():
+    return render_template('eeestatic.html')
+
 @app.route('/civilstatic.html')
 def civilstatic():
     return render_template('civilstatic.html')
 
-@app.route('/mechanicalStat.html')
-def mechanicalStat():
-    return render_template('mechanicalStat.html')
+@app.route('/mechanicalstatic.html')
+def mechanicalstatic():
+    return render_template('mechanicalstatic.html')
 #hehe
 @app.route('/home.html')
+def home():
+    return render_template('home.html')
 
 def homepage():
    dict={}
