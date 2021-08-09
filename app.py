@@ -85,7 +85,7 @@ def newsscraper():
     
     file.write(str(article))
  file.close()
- 
+#NEWS ADDED
  
 @app.route('/news.html')
 def news():
