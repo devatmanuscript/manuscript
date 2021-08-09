@@ -1,5 +1,7 @@
 
 from flask import Flask, render_template, request
+from bs4 import BeautifulSoup
+import requests
 
 def add_values_in_dict(sample_dict, key, list_of_values):
 
@@ -72,4 +74,22 @@ def homepage():
     
    return render_template('home.html', headings=headings, data=dict)
 
+def newsscraper():
+ url = 'https://www.sciencenews.org/'
 
+ source = requests.get('https://www.sciencenews.org/').text
+
+ soup = BeautifulSoup(source,'lxml')
+ file = open("./templates/news.html","w", errors='ignore' , encoding="utf8" )
+ for article in soup.find_all('div',class_='term-river-grid__group___2d4hS'):
+    
+    file.write(str(article))
+ file.close()
+ 
+ 
+@app.route('/news.html')
+def news():
+ newsscraper()
+ 
+ return render_template("news.html")
+    
