@@ -41,6 +41,10 @@ def menubar():
 def csestatic():
     return render_template('csestatic.html')
 
+@app.route('/nitcse.html')
+def nitcse():
+    return render_template('nitcse.html')
+
 @app.route('/eeestatic.html')
 def eeestatic():
     return render_template('eeestatic.html')
