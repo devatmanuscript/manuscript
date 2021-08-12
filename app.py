@@ -19,9 +19,9 @@ def research():
     return render_template('research.html')
 
 
-@app.route('/professor.html')
-def professor():
-    return render_template('professor.html')
+@app.route('/branches.html')
+def branches():
+    return render_template('branches.html')
 
 @app.route('/conversion.html')
 def conversion():
