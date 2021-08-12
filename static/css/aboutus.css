@@ -76,14 +76,16 @@ body {
   }
   
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 #2d2e2e;
+    color: #f1f1f1;
+    background-color: #2b2a2a;
     margin: 8px;
   }
   
   .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #474e5d;
+    background-color: #3b2c3b;
     color: white;
   }
   
