@@ -200,12 +200,19 @@ h2 a {
   display: block;
 }
 
+.droptable {
+  color: rgb(187, 187, 187);
+  background-color:#1F2739;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+}
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
 /*
 .collapsible {
   background-color: #777;
