@@ -2,64 +2,6 @@ body {
     font-family: "Lato", sans-serif;
   }
   
-  .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-    background-color: #444;
-  }
-  
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
-  
   html {
     box-sizing: border-box;
   }
@@ -69,23 +11,29 @@ body {
   }
   
   .column {
+    position:relative;
     float: left;
-    width: 33.3%;
+    width: 500px;
+    height: 500px;
     margin-bottom: 16px;
-    padding: 0 8px;
+    padding: 8px;
   }
   
   .card {
-    box-shadow: 0 4px 8px 0 #2d2e2e;
+    box-shadow: 0 19px 38px rgba(150, 148, 148, 0.3), 0 15px 12px rgba(0,0,0,0.22);
     color: #f1f1f1;
     background-color: #2b2a2a;
-    margin: 8px;
+    margin: 9px;
+    height: 400px;
+    width: 245px;
+    position: relative;
+    left: 100px;
   }
   
   .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #3b2c3b;
+    background-color: #694069;
     color: white;
   }
   
