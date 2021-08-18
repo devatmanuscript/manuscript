@@ -7,9 +7,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  background-color: #f7f8fc;
+  background-color:#1c1d1d;
   font-family: "Roboto", sans-serif;
-  color: #10182f;
+  color: white;
 }
 .container {
   display: flex;
@@ -19,7 +19,7 @@ body {
 }
 .card {
   margin: 10px;
-  background-color: #fff;
+  background-color: rgb(146, 142, 142);
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -50,15 +50,15 @@ body {
   cursor: pointer;
 }
 .tag-teal {
-  background-color: #47bcd4;
+  background-color: #FFF842;
   font-size: 20;
 }
 .tag-purple {
-  background-color: #5e76bf;
+  background-color: #FFF842;
   font-size: 20;
 }
 .tag-pink {
-  background-color: #cd5b9f;
+  background-color: #FFF842;
   font-size: 20;
 }
 
