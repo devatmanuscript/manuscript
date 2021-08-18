@@ -60,6 +60,20 @@ def mechanicalstatic():
 @app.route('/home.html')
 def home():
     return render_template('home.html')
+#underdev
+@app.route('/underdev.html')
+def under():
+    return render_template('underdev.html')
+#IITchemical
+@app.route('/iitchemical.html')
+def IITchemical():
+    return render_template('iitchemical.html')
+#IITbiotechnology
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
+
+
 
 def homepage():
    dict={}
