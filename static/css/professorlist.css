@@ -13,6 +13,8 @@ body {
   width: fit-content;
   height: fit-content;
   position: relative;
+  margin-right:auto;
+  margin-left:auto;
 }
 .input-search{
   height: 20px;
