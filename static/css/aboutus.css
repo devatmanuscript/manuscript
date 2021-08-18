@@ -1,75 +1,287 @@
-body {
-    font-family: "Lato", sans-serif;
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display:block;
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  background: #292c2f;
+  color: rgba(255, 255, 255, 0.5);
+  height: 50pt;
+}
+
+h1 {
+  display: inline-block;
+  position: absolute;
+  padding: 4pt;
+}
+
+.header > input, 
+.header > label 
+{
+  display: none;
+}
+
+/* NAVIGATION */
+nav {
+  display: inline-block;
+  float: right;
+  width: 50%;
+  margin: 10pt auto;
+}
+nav > ul {
+  list-style: none;
+  text-align: right;
+}
+nav > ul > li {
+  display: inline-block;
+}
+nav > ul > li > a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 8px;
+}
+nav > ul > li > a,
+nav > ul > li > a:after,
+nav > ul > li > a:before {
+  transition: all .5s;
+}
+nav > ul > li > a:hover {
+  color: #555;
+}
+
+
+
+/* Circle */
+nav.circle > ul > li > a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.circle > ul > li > a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle > ul > li > a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
   }
-  
-  html {
-    box-sizing: border-box;
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
   }
+}
+
+.about_us{
+  display: block;
+  width: 80%;
+  min-height: 60vh;
+  background: #34495e;
+  color: rgba(255, 255, 255, 0.7);
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  padding: 150px 10% 50px 10%;
+}
+
+.about_us > h2{
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32px;
+  line-height: 31px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0 auto 30px;
+}
+
+.about_us > span {
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.75;
+  margin: 20px auto 10px;
+}
+
+.about_us > p{
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  margin: 0 auto 10px;
+}
+
+.about_us > img{
+  display: block;
+  margin-bottom: 20px;
+}
+
+.about_us > .mission{
+  color: rgba(255, 255, 255, 1);
+  display: blcok;
+  width: 60%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgba(92,188,224,0.4);
+  margin-left: 20%;
+  padding: 5px 10px; 
+
+}
+
+.about_us > .mission > span{
+  display: block;
+  margin: 0 auto 10px;
+  font-size: x-large;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.75;
+}
+.about_us > .mission > p{
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto 10px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+
+
+.footer {
+  background: #485b6e; 
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  width: 100%;
+  position: auto;
+}
+.footer > .address {
+  display: inline-block;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 50px;
+  width: auto;
+  float: left;
+}
+.footer > .address > span{
+  display: block;
+  padding-top: 10px;
+}
+.footer > .phone {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  margin-right: 10%;
+  margin-top: 50px;
+  float: right;
+}
+.footer > .phone > span{
+  display: block;
+  padding-top: 10px;
+  text-align: right;
+}
+.footer > .email {
+  margin-right: 10%;
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  float: right;
+}
+.footer > .email > .email{
+  display: block;
+  padding-top: 10px;
+  text-align: right;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+.footer > .copyright {
+  display: inline-block;
+  margin: 70px 0 60px 10%;
+  width: 80%;
+  position: relative;
+}
+
+@media (max-width: 900px) {
   
-  *, *:before, *:after {
-    box-sizing: inherit;
+  .header > #nav + label + nav.circle {
+    display: none;
+    width: 120px;
+    padding: 10px;
+    background-color :#292c2f;
   }
-  
-  .column {
-    position:relative;
-    float: left;
-    width: 500px;
-    height: 500px;
-    margin-bottom: 16px;
-    padding: 8px;
+
+  .header > #nav:checked + label + nav.circle {
+    display: block;
   }
-  
-  .card {
-    box-shadow: 0 19px 38px rgba(150, 148, 148, 0.3), 0 15px 12px rgba(0,0,0,0.22);
-    color: #f1f1f1;
-    background-color: #2b2a2a;
-    margin: 9px;
-    height: 400px;
-    width: 245px;
-    position: relative;
-    left: 100px;
-  }
-  
-  .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #694069;
-    color: white;
-  }
-  
-  .container {
-    padding: 0 16px;
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
+
+
+  .header > nav.circle> ul {
+    display: block;
     width: 100%;
+    text-align: left;
   }
-  
-  .button:hover {
-    background-color: #555;
+
+  .header > nav.circle > ul> li {
+    display: block;
+    font-size 80%;
+  }  
+
+  .header > nav.circle {
+    position: absolute;
+    top: 54px;
+    right: 0;
+    z-index: 100;
+    text-align: left;
+  }   
+
+  .header > label {
+    display: inline-block;
+    float: right;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
   }
-  
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
+}
