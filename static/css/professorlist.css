@@ -185,7 +185,7 @@ h2 a {
 .dropbtn {
   background-color: #04AA6D;
   color: white;
-  padding: 16px;
+  padding: 8px;
   font-size: 16px;
   border: none;
 }
@@ -199,14 +199,13 @@ h2 a {
   display: none;
   
   background-color: #f1f1f1;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 8px 10px;
   font-size: 16px;
   text-decoration: none;
   display: block;
@@ -215,7 +214,6 @@ h2 a {
 .droptable {
   color: rgb(187, 187, 187);
   background-color:#1F2739;
-  padding: 16px;
   font-size: 16px;
   border: none;
   font-weight: bold;
