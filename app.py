@@ -35,7 +35,10 @@ def aboutus():
 @app.route('/')
 def menubar():
     return render_template('home.html')
-
+#template
+@app.route('/template.html')
+def journaltemplate():
+    return render_template('template.html')
     
 @app.route('/csestatic.html')
 def csestatic():
