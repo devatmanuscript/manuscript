@@ -51,17 +51,21 @@ body {
 }
 .tag-teal {
   background-color: #47bcd4;
+  font-size: 20;
 }
 .tag-purple {
   background-color: #5e76bf;
+  font-size: 20;
 }
 .tag-pink {
   background-color: #cd5b9f;
+  font-size: 20;
 }
 
 .card-body p {
   font-size: 13px;
   margin: 0 0 40px;
+  
 }
 .user {
   display: flex;
