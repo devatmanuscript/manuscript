@@ -75,7 +75,7 @@ def IITchemical():
 @app.route('/IITBIOTECH.html')
 def IITBIOTECH():
     return render_template('IITBIOTECH.html')
-@app.route('/IITBIOTECH.html')
+# @app.route('/IITBIOTECH.html')
 # def IITBIOTECH():
 #     return render_template('IITBIOTECH.html')
 # @app.route('/IITBIOTECH.html')
@@ -135,7 +135,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif; poppins;
         font: inherit;
         vertical-align: baseline;
         display: block;
@@ -159,7 +159,7 @@ def newsscraper():
         padding: 0;
         border: 0;
         box-sizing: border-box;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         font-family: charter,georgia,serif;
@@ -183,7 +183,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         margin-left: auto;
@@ -210,7 +210,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         padding-bottom: 5rem;
@@ -234,7 +234,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         display: block;
@@ -258,7 +258,7 @@ def newsscraper():
         padding: 0;
         border: 0;
         box-sizing: border-box;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         font-family: museo-sans,helvetica,arial,sans-serif;
@@ -286,7 +286,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         list-style: none;
@@ -310,7 +310,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         }
@@ -330,7 +330,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         display: block;
@@ -356,7 +356,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         color: inherit;
@@ -374,7 +374,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         color: inherit;
@@ -395,7 +395,7 @@ def newsscraper():
         padding: 0;
         border: 0;
         box-sizing: border-box;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         font-family: charter,georgia,serif;
@@ -418,7 +418,7 @@ def newsscraper():
         padding: 0;
         border: 0;
         box-sizing: border-box;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         color: #31313b;
@@ -439,7 +439,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;}
 
@@ -455,7 +455,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         color: inherit;
@@ -475,7 +475,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
     }
@@ -500,34 +500,15 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-style: normal;
+        font-family: 'Poppins', sans-serif;;
         font: inherit;
         vertical-align: baseline;
         display: none;
 
         } 
         </style>
-        <script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
-  </script>
         </head>
-        <body>
-         <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="branches.html">Branches</a>
-    <a href="home.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="news.html">News</a>
-  </div>
+        
             <section class="topics-river__wrapper___2CozB">
             <h2 class="topics-river__heading___JcY1k">
                 More Stories	</h2>
@@ -544,7 +525,6 @@ def newsscraper():
     file.write("""
 
         </section>
-        </body>
         <footer class="footer">
     <link rel="stylesheet" href="/static/css/footer.css">
        <div class="footer-container">
@@ -570,7 +550,7 @@ def newsscraper():
            <div class="footer-col">
              <ul>
                <li><h4 style="font-weight: 600;">ManuScript © 2021</h4></li>
-               <li>A Platform for Academia.</a></li>
+               <li style="color: azure;">A Platform for Academia.</li>
              </ul>
            </div>
            <div class="footer-col">
