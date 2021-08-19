@@ -3,12 +3,6 @@ from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
 import requests
 
-def add_values_in_dict(sample_dict, key, list_of_values):
-
-    if key not in sample_dict:
-        sample_dict[key] = list()
-    sample_dict[key].extend(list_of_values)
-    return sample_dict
 
 
 app = Flask(__name__)
@@ -72,45 +66,36 @@ def under():
 def IITchemical():
     return render_template('iitchemical.html')
 #IITbiotechnology
-@app.route('/IITBIOTECH.html')
+@app.route('/IITBIOTECH.HTML')
 def IITBIOTECH():
-    return render_template('IITBIOTECH.html')
-# @app.route('/IITBIOTECH.html')
-# def IITBIOTECH():
-#     return render_template('IITBIOTECH.html')
-# @app.route('/IITBIOTECH.html')
-# def IITBIOTECH():
-#     return render_template('IITBIOTECH.html')
-# @app.route('/IITBIOTECH.html')
-# def IITBIOTECH():
-#     return render_template('IITBIOTECH.html')
-# @app.route('/IITBIOTECH.html')
-# def IITBIOTECH():
-#     return render_template('IITBIOTECH.html')
-# @app.route('/IITBIOTECH.html')
-# def IITBIOTECH():
-#     return render_template('IITBIOTECH.html')
-# @app.route('/IITBIOTECH.html')
-# def IITBIOTECH():
-#     return render_template('IITBIOTECH.html')
+    return render_template('IITBIOTECH.HTML')
+#IIITCSEADDED
+@app.route('/IIITCSE.HTML')
+def IIITCSE():
+    return render_template('IIITCSE.HTML')
+#NIT ECE ADDED
+@app.route('/NITECE.html')
+def NITECE():
+    return render_template('NITECE.html')
+#IIIT ECE ADDED
+@app.route('/IIITECE.html')
+def IIITECE():
+    return render_template('IIITECE.HTML')
+
+#NIT CIVIL ADDED
+@app.route('/NITCIVIL.html')
+def NITCIVIL():
+    return render_template('NITCIVIL.html')
+#NIT MECH ADDED
+@app.route('/NITmech.html')
+def NITmech():
+    return render_template('NITmech.html')
 
 
-def homepage():
-   dict={}
-  
-   for i in range(1,4):
-    number=str(i)
-    str1='hi'+ number
-    result = db.collection('hello').document(str1).get()
-    data=result.to_dict()
 
-    name=data['Name']
-    sex=data['Sex']
-    dict = add_values_in_dict(dict, 'Name', [name])
-    dict = add_values_in_dict(dict, 'Sex', [sex])
 
-    
-   return render_template('home.html', headings=headings, data=dict)
+
+
 
 def newsscraper():
 
