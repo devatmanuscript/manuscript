@@ -75,7 +75,24 @@ def IITchemical():
 @app.route('/IITBIOTECH.html')
 def IITBIOTECH():
     return render_template('IITBIOTECH.html')
-
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
+@app.route('/IITBIOTECH.html')
+def IITBIOTECH():
+    return render_template('IITBIOTECH.html')
 
 
 def homepage():
