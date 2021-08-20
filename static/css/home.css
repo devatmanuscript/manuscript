@@ -11,6 +11,8 @@
     color: #e4e2de !important;
     background-color: #1e2021 !important;
 }
+.w3-hoverable tbody tr:hover, .w3-ul.w3-hoverable li:hover {
+  background-color: #3b3a3a;}
   #more {display: none;}
   
 
