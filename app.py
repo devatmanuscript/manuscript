@@ -122,7 +122,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif; poppins;
         font: inherit;
-        vertical-align: baseline;
+        
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -146,7 +146,7 @@ def newsscraper():
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         font-family: charter,georgia,serif;
         font-weight: 700;
         color: #31313b;
@@ -170,7 +170,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -197,7 +197,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         padding-bottom: 5rem;
         margin-right: 1.25rem;
         width: calc(25vw - 1.8749rem);
@@ -221,7 +221,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         display: block;
         border-bottom: 1px solid;
         border-color: #31313b;
@@ -245,7 +245,7 @@ def newsscraper():
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         font-family: museo-sans,helvetica,arial,sans-serif;
         font-weight: 700;
         letter-spacing: .075em;
@@ -273,7 +273,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         list-style: none;
 
 
@@ -297,7 +297,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         }
 
         
@@ -317,7 +317,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         display: block;
         height: auto;
         margin: 0;
@@ -343,7 +343,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         color: inherit;
         text-decoration: none;
         display: block;
@@ -361,7 +361,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         color: inherit;
         text-decoration: none;
         display: block;
@@ -382,7 +382,7 @@ def newsscraper():
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         font-family: charter,georgia,serif;
         font-weight: 700;
         color: #31313b;
@@ -405,7 +405,7 @@ def newsscraper():
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         color: #31313b;
         font-size: .8125rem;
         line-height: 1.15385;
@@ -426,7 +426,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;}
+        }
 
         .byline-link url fn n{
             --adminbar-height: 0rem;
@@ -442,7 +442,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         color: inherit;
         text-decoration: none;}
 
@@ -462,7 +462,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
     }
 
 
@@ -487,7 +487,7 @@ def newsscraper():
         font-size: 100%;
         font-family: 'Poppins', sans-serif;;
         font: inherit;
-        vertical-align: baseline;
+        
         display: none;
 
         } 
