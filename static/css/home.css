@@ -3,7 +3,14 @@
     font-family: "Raleway", sans-serif;
     background-color:"black";}
   
-  
+    .w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+      color: #eeece9!important;
+      background-color: #26292a !important;
+  }
+  .w3-white, .w3-hover-white:hover {
+    color: #e4e2de !important;
+    background-color: #1e2021 !important;
+}
   #more {display: none;}
   
 
