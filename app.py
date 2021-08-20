@@ -104,6 +104,8 @@ def newsscraper():
     source = requests.get('https://www.sciencenews.org/').text
     file = open("./templates/news.html","w", errors='ignore' , encoding="utf8" )
     file.write("""    <head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title> NEWS </title>
         <style>
 
     .topics-river__wrapper___2CozB
@@ -120,7 +122,7 @@ def newsscraper():
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-family: 'Poppins', sans-serif; poppins;
+        font-family: 'Poppins', sans-serif;
         font: inherit;
         
         display: block;
