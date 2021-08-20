@@ -134,3 +134,4 @@ dmypy.json
 #API keys
 serviceAccountKey.json
 templates/news.html
+templates/csestatic.html
