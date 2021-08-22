@@ -51,3 +51,7 @@ soupsieve==2.2.1
 uritemplate==3.0.1
 urllib3==1.26.6
 Werkzeug==2.0.1
+Flask-SocketIO==4.3.1
+python-engineio==3.13.2
+python-socketio==4.6.0
+Flask-Session==0.3.2
