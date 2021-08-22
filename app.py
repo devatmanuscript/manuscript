@@ -590,7 +590,7 @@ def chat():
         else:
             return redirect(url_for('index'))
 
-@socketio.on('join', namespace='/chat')
+@socketio.on('join', namespace='https://manuscript-fl.herokuapp.com/chat')
 def join(message):
     room = session.get('room')
     join_room(room)
