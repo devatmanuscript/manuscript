@@ -590,20 +590,20 @@ def chat():
         else:
             return redirect(url_for('index'))
 
-@socketio.on('join', namespace='/chat')
+@socketio.on('join', namespace='https://manuscript-fl.herokuapp.com//chat')
 def join(message):
     room = session.get('room')
     join_room(room)
     emit('status', {'msg':  session.get('username') + ' has entered the room.'}, room=room)
 
 
-@socketio.on('text', namespace='/chat')
+@socketio.on('text', namespace='https://manuscript-fl.herokuapp.com//chat')
 def text(message):
     room = session.get('room')
     emit('message', {'msg': session.get('username') + ' : ' + message['msg']}, room=room)
 
 
-@socketio.on('left', namespace='/chat')
+@socketio.on('left', namespace='https://manuscript-fl.herokuapp.com//chat')
 def left(message):
     room = session.get('room')
     username = session.get('username')
