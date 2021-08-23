@@ -571,7 +571,7 @@ Session(app)
 socketio = SocketIO(app, manage_session=False)
 
 
-@app.route('/room.html', methods=['GET', 'POST'])
+@app.route('/index.html', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
@@ -590,7 +590,7 @@ def chat():
         else:
             return redirect(url_for('index'))
 
-@socketio.on('join', namespace='https://manuscript-fl.herokuapp.com/chat')
+@socketio.on('join', namespace='/chat')
 def join(message):
     room = session.get('room')
     join_room(room)
