@@ -28,7 +28,7 @@ httplib2==0.19.1
 idna==3.2
 itsdangerous==2.0.1
 Jinja2==3.0.1
-lxml==4.6.3
+lxml==4.6.5
 MarkupSafe==2.0.1
 msgpack==1.0.2
 numpy==1.21.1
